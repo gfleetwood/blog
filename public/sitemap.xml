@@ -13,18 +13,8 @@
   </url>
   
   <url>
-    <loc>/blog/third/</loc>
-    <lastmod>2016-10-03T16:59:13-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/first/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/second/</loc>
-    <lastmod>2016-10-01T16:59:13-04:00</lastmod>
   </url>
   
   <url>
@@ -33,13 +23,13 @@
   </url>
   
   <url>
-    <loc>/categories/about/</loc>
+    <loc>/tags/about/</loc>
     <lastmod>2019-02-28T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/about/</loc>
+    <loc>/categories/about/</loc>
     <lastmod>2019-02-28T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -58,13 +48,13 @@
   
   <url>
     <loc>/tags/belson/</loc>
-    <lastmod>2016-10-03T16:59:13-04:00</lastmod>
+    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2016-10-03T16:59:13-04:00</lastmod>
+    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -75,14 +65,8 @@
   </url>
   
   <url>
-    <loc>/tags/ceo/</loc>
-    <lastmod>2016-10-01T16:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/gavin/</loc>
-    <lastmod>2016-10-03T16:59:13-04:00</lastmod>
+    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,7 +78,7 @@
   
   <url>
     <loc>/tags/hooli/</loc>
-    <lastmod>2016-10-03T16:59:13-04:00</lastmod>
+    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,12 +91,6 @@
   <url>
     <loc>/tags/projects/</loc>
     <lastmod>2019-02-28T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/propaganda/</loc>
-    <lastmod>2016-10-03T16:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   

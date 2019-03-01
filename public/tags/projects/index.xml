@@ -18,7 +18,8 @@
       
       <guid>/projects/</guid>
       <description>Data Science 
-Pass Prediction In Soccer: [Blog] | [Code]
+Pass Prediction In Soccer
+Links: [Blog] | [Code]
 Description: Analysis of data for the Football Pass Prediction Challenge of the 5th Workshop on Machine Learning and Data Mining for Sports Analytics. It consisted of mostly of player location data for over 12,000 passes from Belgian soccer. The stated goal was to predict the recipient of a pass.
 Summary: The main pipeline involved feature engineering to create a feature for distance, another for the product of x-y coordinates, scaling numeric features, and dummying the sole categorical column.</description>
     </item>
