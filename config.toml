@@ -63,7 +63,7 @@ socialmarkup = true
     weight = 200
     url = "/about/"
 [[menu.main]]
-    name = "coderag"
-    identifier = "coderag"
+    name = "projects"
+    identifier = "projects"
     weight = 300
-    url = "/coderag/"
+    url = "/projects/"

@@ -12,13 +12,15 @@
     
     
     <item>
-      <title>CodeRag</title>
-      <link>/coderag/</link>
+      <title>Projects</title>
+      <link>/projects/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
       
-      <guid>/coderag/</guid>
-      <description>Notes: This article originally appeared in CodeRag.
-Code/Rag has always been more than just another online tech blog. We strive to be part of the tech community—serving an essential, fundamental look at what’s going on in the valley. It’s why our tagline is “Know Your Code.” We think a tech news publication should know the basics. Be the source. Get down to brass tacks. We can do that because we’re part of the very ecosystem we’re reporting on.</description>
+      <guid>/projects/</guid>
+      <description>Data Science 
+Pass Prediction In Soccer: [Blog] | [Code]
+Description: Analysis of data for the Football Pass Prediction Challenge of the 5th Workshop on Machine Learning and Data Mining for Sports Analytics. It consisted of mostly of player location data for over 12,000 passes from Belgian soccer. The stated goal was to predict the recipient of a pass.
+Summary: The main pipeline involved feature engineering to create a feature for distance, another for the product of x-y coordinates, scaling numeric features, and dummying the sole categorical column.</description>
     </item>
     
   </channel>
