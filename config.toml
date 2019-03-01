@@ -34,15 +34,15 @@ keywords = "minimalist,blog,goa,hugo,developer"
 
 ## Social Accounts
 [params.social]
-github = "<username>"
-linkedin = "<username>"
-twitter = "<username>"
+github = "gfleetwood"
+linkedin = "gfleetwood"
+#twitter = "<username>"
 #stackoverflow = "<username>"
 #hackernews = "<username>"
 #kickstarter = "<username>"
 #patreon = "<username>"
 #youtube = "<username>"
-email = "you@example.com"
+email = "gfleetwood@protonmail.com"
 
 ## Extras
 [params.extra]
