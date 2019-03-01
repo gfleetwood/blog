@@ -18,23 +18,18 @@
   </url>
   
   <url>
-    <loc>/blog/2015-07-23-r-rmarkdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/r-rmarkdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/about/</loc>
+    <loc>/tags/about/</loc>
     <lastmod>2019-02-28T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/about/</loc>
+    <loc>/categories/about/</loc>
     <lastmod>2019-02-28T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -58,13 +53,13 @@
   </url>
   
   <url>
-    <loc>/categories/other/</loc>
+    <loc>/tags/other/</loc>
     <lastmod>2019-02-28T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/other/</loc>
+    <loc>/categories/other/</loc>
     <lastmod>2019-02-28T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>

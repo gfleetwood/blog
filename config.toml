@@ -46,7 +46,7 @@ email = "gfleetwood@protonmail.com"
 
 ## Extras
 [params.extra]
-#copyright = "© 2016. Erlich Bachman. [Some Rights Reserved](http://creativecommons.org/licenses/by/3.0/)."
+copyright = "© 2019"
 poweredby = true
 highlightjs = true
 socialmarkup = true
