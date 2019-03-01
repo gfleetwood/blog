@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Erlich Bachman</title>
+    <title>Categories on technologiad</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on Erlich Bachman</description>
+    <description>Recent content in Categories on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 28 Feb 2019 22:55:05 -0400</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>About</title>
       <link>/categories/about/</link>
-      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
       <guid>/categories/about/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>Articles</title>
       <link>/categories/articles/</link>
-      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
       <guid>/categories/articles/</guid>
       <description></description>

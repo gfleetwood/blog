@@ -9,8 +9,8 @@ contentdir = "content"
 layoutdir = "layouts"
 publishdir = "public"
 
-author = "Erlich Bachman"
-title = "Erlich Bachman"
+author = "technologiad"
+title = "technologiad"
 
 theme = "hugo-goa"
 
@@ -21,8 +21,8 @@ enableRobotsTXT = true
 
 ## Site Settings
 [params]
-author = "Gordon Fleetwood"
-intro = "Data Enthusiast"
+author = "technologiad"
+intro = ""
 description = "This is my blog for recording my thoughts and projects"
 authorimage = "headshot.jpg"
 dateformat = "Jan 2, 2006"
