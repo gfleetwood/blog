@@ -21,20 +21,20 @@
     </item>
     
     <item>
-      <title>Ad</title>
-      <link>/categories/ad/</link>
-      <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
-      
-      <guid>/categories/ad/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Articles</title>
       <link>/categories/articles/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
       <guid>/categories/articles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Other</title>
+      <link>/categories/other/</link>
+      <pubDate>Thu, 28 Feb 2019 15:59:13 -0400</pubDate>
+      
+      <guid>/categories/other/</guid>
       <description></description>
     </item>
     

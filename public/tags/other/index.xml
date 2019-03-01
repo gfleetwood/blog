@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Other on technologiad</title>
+    <link>/tags/other/</link>
+    <description>Recent content in Other on technologiad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 28 Feb 2019 15:59:13 -0400</lastBuildDate>
+    
+	<atom:link href="/tags/other/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A New Start</title>
+      <link>/blog/first/</link>
+      <pubDate>Thu, 28 Feb 2019 15:59:13 -0400</pubDate>
+      
+      <guid>/blog/first/</guid>
+      <description>After centuries of trying I finally mastered the art of blogdown. All it took was incremental version controlled changes and keeping git revert --hard close at hand. This is my third blog iteration after a Jekyll based version and Medium. They were both ill-equiped to handle Data Analysis heavy posts, so this setup is just right - especially after I figured out how to embed Jupyter notebooks in RMarkdown. For posteriority&amp;rsquo;s sake, here are links to Medium and RPubs.</description>
+    </item>
+    
+  </channel>
+</rss>
