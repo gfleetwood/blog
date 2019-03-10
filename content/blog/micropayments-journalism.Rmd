@@ -21,6 +21,6 @@ One takes the process outlined above and replaces Metamask with a small company 
 
 [Blendle](https://blendle.com/home), on the other hand, wields an impressive clientele of names such as The Financial Times, The Wall Street Journal, The Economist, and Time Magazine, to name a few. It provides a more unified experience compared to Agate by bosting articles on its own platform which presents a pleasant, minimalist reading experience. One surprising inclusion is the option to request a refund if you feel an article wasn't worth your time. On a related note, a reader isn't charged if an article is opened and closed right away. It is strange, though, that payment confirmation seems to be linked to a temporal rather than a spatial (scrolling based) trigger.
 
-These type of microtransactions won't solve journalism's financial problems, but there don't seem to be any obvious downsides - assuming a sensible pricing structure. I hope the use of services like Agate and Blendle increases sustantially across the industry in upcoming years.
+These type of microtransactions won't solve journalism's financial problems, but there don't seem to be any obvious downsides - assuming a sensible pricing structure. I hope the use of services like Agate and Blendle increases substantially across the industry in upcoming years.
 
 
