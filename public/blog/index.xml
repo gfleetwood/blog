@@ -6,10 +6,19 @@
     <description>Recent content in Blogs on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 28 Feb 2019 15:59:13 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Microtransactions In Journalism</title>
+      <link>/blog/decoupling-payments/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/decoupling-payments/</guid>
+      <description>The changing face of journalism has been written about extensively, which is unsurprising given the field’s major occupation. Advertistng driven revenue reached a peak of close to $50 billion dollars in about 2010 before being suffocated by the Google and Facebook juggernauts. Cue the shuttering of newsrooms and clearing of desks as the industry struggled to regain its footing in the digital age. Even new media companies who thought they had the nimbleness to avoid the fate of the old guard have stumbled.</description>
+    </item>
     
     <item>
       <title>A New Start</title>

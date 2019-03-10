@@ -1,0 +1,26 @@
+---
+title: "Microtransactions In Journalism"
+date: 2019-03-10
+categories: ["other"]
+tags: ["other"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+The changing face of journalism has been written about extensively, which is unsurprising given the field's major occupation. Advertistng driven revenue reached a peak of close to [$50 billion dollars](http://www.pewresearch.org/fact-tank/2017/06/01/circulation-and-revenue-fall-for-newspaper-industry/) in about 2010 before being suffocated by the Google and Facebook juggernauts. Cue the shuttering of newsrooms and clearing of desks as the industry struggled to regain its footing in the digital age. Even new media companies who thought they had the nimbleness to avoid the fate of the old guard have stumbled.
+
+The response has been a search for new revenue generation schemes. At least one outlet, The Guardian, moved to a user supported model. However, the most popular alternative has been the introduction of a paywall where the majority content is hidden behind a subscription page.
+
+This additional friction is not unwelcome as the negative aspects of the advertising model become more apparent, but would benefit from some lubrication. Aside from the overhead of signing up for an account, dealing with juggling multiple logins, and the usually convoluted canceling process, there is the problem that is mostly associated with the cable industry. Like paying for dozens of uninteresting channels so you can watch sports, monolithic paywalls force you to implicitly pay for stories you have no interest in. The implementation of a pay-per-article option would provide another revenue stream from people, who like me, are willing to pay for journalism, but have no interest in a getting a subscription.
+
+One option is cryptocurrencies. A possible instantiation is to leverage Metamask, a Chrome extension which simplifies browser interactions with the Ethereum Blockchain. A reader could Install the extension, create a wallet, buy coins, and be on their way to paying for single articles on participating sites. Sadly, outside of few proof of concepts outlined on blogs, this path might as well not exist. However, there are two FIAT currency options that are gaining traction.
+
+One takes the process outlined above and replaces Metamask with a small company known as [Agate](https://agate.one/). After signing up, you add money to your wallet through the website or the add-on which on the domains of participating publishers. Two clicks - one to choose the article, the other to pay - completes a transaction. Agate's current reach is short as none of its five clients are household names.
+
+[Blendle](https://blendle.com/home), on the other hand, wields an impressive clientele of names such as The Financial Times, The Wall Street Journal, The Economist, and Time Magazine, to name a few. It provides a more unified experience compared to Agate by bosting articles on its own platform which presents a pleasant, minimalist reading experience. One surprising inclusion is the option to request a refund if you feel an article wasn't worth your time. On a related note, a reader isn't charged if an article is opened and closed right away. It is strange, though, that payment confirmation seems to be linked to a temporal rather than a spatial (scrolling based) trigger.
+
+These type of microtransactions won't solve journalism's financial problems, but there don't seem to be any obvious downsides - assuming a sensible pricing structure. I hope the use of services like Agate and Blendle increases sustantially across the industry in upcoming years.
+
+
