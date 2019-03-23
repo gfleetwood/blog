@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resumes on technologiad</title>
+    <link>/resume/</link>
+    <description>Recent content in Resumes on technologiad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 23 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/resume/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resume</title>
+      <link>/resume/resume/</link>
+      <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/resume/resume/</guid>
+      <description>.col4 { columns: 4 100px; /* number of columns and width in pixels*/ -webkit-columns: 4 200px; /* chrome, safari */ -moz-columns: 4 200px; /* firefox */ } .col3 { columns: 3 100px; -webkit-columns: 3 100px; -moz-columns: 3 100px; } .col2 { columns: 2 100px; -webkit-columns: 2 100px; -moz-columns: 2 100px; } #column_container { width: 959px; margin: 0 auto; }   Gordon Fleetwood  gfleetwood.netlify.com gfleetwood@protonmail.com github.com/gfleetwood New York, NY Professional Experience Data Analyst: New Classrooms 2017 - Present  Applied Bayesian Analysis in R to evaluate optimal learning pathways for students Built a Machine Learning model in Python to predict the probability of a student learning specific Mathematical skills Leveraged SQL to pull data for information requests throughout the company Redesigned the ETL pipeline for reporting test results Wrote detailed reports for non-technical project stakeholders Wrote an internal R package to consolidate various data processing tasks Leveraged cloud computing for analyses with large data sets.</description>
+    </item>
+    
+  </channel>
+</rss>

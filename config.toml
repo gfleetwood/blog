@@ -60,10 +60,15 @@ socialmarkup = true
 [[menu.main]]
     name = "about"
     identifier = "about"
-    weight = 200
+    weight = 300
     url = "/about/"
 [[menu.main]]
     name = "projects"
     identifier = "projects"
-    weight = 300
+    weight = 200
     url = "/projects/"
+[[menu.main]]
+    name = "resume"
+    identifier = "resume"
+    weight = 300
+    url = "/resume/resume"
