@@ -6,10 +6,19 @@
     <description>Recent content on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Income &amp; New York&#39;s Subway</title>
+      <link>/blog/income_nyc_subway/</link>
+      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/income_nyc_subway/</guid>
+      <description>Introduction My favorite data visualization is Inequality And New York’s Subway. It provides a fascinating look into the city via its main circulatory system. The information is a bit dated now (the data is from 2011), and I’ve always wanted to update it. However, navigating the US Census Bureau’s data portal always ended with me closing the tab in frustration.</description>
+    </item>
     
     <item>
       <title>Resume</title>

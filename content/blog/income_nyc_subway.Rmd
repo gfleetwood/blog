@@ -1,0 +1,206 @@
+---
+title: "Income & New York's Subway"
+date: 2019-03-25
+categories: ["data-viz"]
+tags: ["data-viz"]
+output: 
+    html_document:
+        code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+My favorite data visualization is [Inequality And New York's Subway](https://projects.newyorker.com/story/subway/). It provides a fascinating look into the city via its main circulatory system. The information is a bit dated now (the data is from 2011), and I've always wanted to update it. However, navigating the US Census Bureau's data portal always ended with me closing the tab in frustration. 
+
+My luck changed when Safe Graph released [free neighborhood census data from 2016](https://www.safegraph.com/open-census-data). Even so it took a while for me to sit down and get stuck into the process. It was certainly more work than I anticipated, and the final product isn't an exact replica, but I completed the New York City's Subway And Income interactive visualization which is available to play around with at the bottom of this post. Here's the tale of my journey.
+
+## Methodology
+
+Safe Graph's data is broken down into census blocks across the United States with associated data - including median income. New York City's share of the data at the income level had 9% of records missing which wasn't egregious enough to be worrying. The first toil was to match subway stations to census blocks. 
+
+```{r, eval = T, message = F}
+library(tidyverse)
+library(leaflet)
+library(geosphere) # Haversine distance
+library(crosstalk)
+library(plotly)
+library(formattable) # Format currencies
+
+calc_dist <- function(lon1, lat1, lon2, lat2){
+    
+    dist <- distm(c(lon1, lat1), c(lon2, lat2), fun = distHaversine)
+    return(dist)
+    
+}
+
+# Gets all the stops for a given train
+get_train_stops <- function(train, stops){
+    
+    result <- stops %>% 
+        ungroup() %>% 
+        mutate(has_train = map(trains_list, function(x) train %in% x)) %>% 
+        filter(has_train == TRUE) %>% 
+        select(-has_train, -trains, -trains_list) %>% 
+        mutate(train = train)
+    
+    return(result)
+    
+}
+
+# Ultimately unused but not discarded due to strange sentimental reasons
+sort_stations <- function(df){
+    
+    if(nrow(df) == 1) return(df)
+    
+    start <- df[1,]
+    
+    df <- df[2:nrow(df), ] %>%
+        mutate(dist = unlist(pmap(list(longitude, latitude, start$longitude, start$latitude),
+                              function(x, y, z1, z2) calc_dist(x, y, z1, z2)))) %>% 
+        arrange(dist) %>% select(-dist)
+    
+    return(rbind(start, sort_stations(df)))
+    
+}
+```
+
+```{r, eval = F, message = F}
+nyc_counties <- c("Queens County", "Bronx County", "Kings County", "New York County")
+df <- read_csv("~/data/safegraph_open_census_data/metadata/cbg_geographic_data.csv")
+
+nyc_cbg <- read_csv("~/data/safegraph_open_census_data/metadata/cbg_fips_codes.csv") %>%
+    filter(state == "NY", county %in% nyc_counties) %>% 
+    # Creating the first five numbers of the cbg id 
+    mutate(cbg_first_five = paste(state_fips, county_fips, sep = "")) %>% 
+    pull(cbg_first_five)
+
+nyc_census_blocks <- read_csv("~/data/safegraph_open_census_data/data/cbg_b19.csv") %>% 
+    select(census_block_group, B19049e1) %>% 
+    rename(median_household_income = B19049e1) %>% 
+    inner_join(df %>% select(census_block_group, latitude, longitude)) %>% 
+    mutate(cbg_first_5 = str_sub(as.character(census_block_group), 1, 5)) %>% 
+    filter(cbg_first_5 %in% nyc_cbg) %>% 
+    # The id column is just an aid to do the cartesian product of stations & census groups
+    # I later discovered a much easier method with tidyr::crossing but didn't bother to change the code
+    mutate(id = 1)
+```
+
+I downloaded that data from the [NYC Open Data portal](https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49), and, in the first of two inelegant choices, took the cartesian product of the stations and the blocks. The other moment of inelegance soon followed as I calculated the [Haversine Distance](https://en.wikipedia.org/wiki/Haversine_formula) between every station and block. 
+
+```{r, eval = F}
+stations_cleaned <- read_csv("~/data/DOITT_SUBWAY_STATION_01_13SEPT2010.csv") %>% 
+    # Cleaning the location data
+    mutate(the_geom = str_sub(the_geom, 8)) %>% 
+    mutate(the_geom = str_replace(the_geom, "\\)", "")) %>% 
+    separate(the_geom, c("longitude_", "latitude_"), sep = " ") %>% 
+    mutate(longitude_ = as.numeric(longitude_), latitude_ = as.numeric(latitude_)) %>% 
+    select(NAME, longitude_, latitude_, LINE) %>% 
+    # See the explanation given above in the creation of nyc_census_blocks for the id column
+    # The station_id uniquely identifies stations since some have the same name
+    mutate(id = 1, station_id = row.names(.))
+
+# There's probably a better way to do this than finding the cross product and generating all the distances.
+
+train_stations_census_blocks <- stations_cleaned %>% 
+    inner_join(nyc_census_blocks) %>%
+    mutate(dist = unlist(pmap(list(longitude_, latitude_, longitude, latitude),
+                              function(x, y, z1, z2) calc_dist(x, y, z1, z2))))
+
+write_csv(train_stations_census_blocks, "nyc_train_stations_income_cbg.csv")
+```
+
+Next came the decision of what should be considered close. One mile seemed like a good threshold, so I discarded census blocks more than that distance away from a given station. Each stop being linked to several blocks prompted the question of how to collate income level. I decided to continue using the median. Thus, each station's income became the median of the median income of the census blocks within one mile. 
+
+```{r, eval = F}
+mta_income <- read_csv("~/data/subway_income/nyc_train_stations_income_cbg.csv")
+
+station_locations <- mta_income %>% 
+    select(station_id, longitude_, latitude_) %>% 
+    group_by(station_id) %>% 
+    summarise(longitude = longitude_[1], latitude = latitude_[1]) %>% 
+    ungroup()
+
+income_1_mile <- mta_income %>%
+    # 1 mile is 1069 meters
+    filter(dist <= 1069) %>% 
+    group_by(station_id, NAME) %>%
+    summarise(median_income = round(median(median_household_income, na.rm = T)),
+              trains = LINE[1]) %>% 
+    mutate(trains_list = str_split(trains, "-")) %>% 
+    ungroup()
+```
+
+More matching followed as I needed to associate stops with train lines. That produced a data set of train-station combinations along with their median income.  
+
+```{r, eval = F}
+trains <- str_split(income_1_mile$trains, "-") %>% 
+    unlist() %>% 
+    unique() %>% 
+    purrr::discard(~ str_detect(., "Express"))
+
+train_stops <- map_df(trains, ~ get_train_stops(., income_1_mile)) 
+write_csv(train_stops, "~/data/subway_income/nyc_train_stops_income.csv")
+```
+
+At this point I felt that I was almost home free. The imaginary celebratory bottle of champagne was almost out when I remembered that I had to deal with boroughs and stations being in the correct order. Past experience made me hesitant to try scraping, so the dreaded thought of manual data entry entered my head for the first time.
+
+That had to be a last resort with 847 stations to go through. I considered viewing ordering stations as a graph theory problem, i.e find the shortest path between the complete graph of a train's stations. Research told me this was a Hamilton path - a term half-remembered from a nostalgic Discrete Math course in my undergrad days. It also happened to be an NP hard problem. Not that then. On the boroughs issue reverse geo-encoding also proved to be a dead end. 
+
+After some more ruminating, I bit the bullet and started the hand-labeling. With one train line down I hit upon another idea for ordering the stations:
+
+1. Label the first station for each train and set it as the origin
+
+2. Find the Haversine distance between the target and the other stations
+
+3. The closest of these is the next station
+
+4. Set this station as the new target and repeat steps 2 and 3 all the stations are in order.
+
+Fully labeling one train line gave me a immediate testing space for this solution and it worked perfectly. Unfortunately, Trying it on another train line didn't go that well. Even with this method I would have to do Q.A on the entire data set and still need to fill in the boroughs. It seemed that getting my hands dirty was the only good option.
+
+## The Final Product
+
+About two weeks later it was finally time for the pay-off. The duo of leaflet and plotly came into the spotlight to provide the centerpiece. With that a long standing item disappeared from my To Do list. Solving Moravec's Paradox is up next.
+
+```{r,  eval = T, warning = F, message = F}
+train_stops <- read_csv("~/data/subway_income/nyc_train_stops_income_order_borough2.csv") %>%
+    mutate(train = as.factor(train))
+
+df <- SharedData$new(train_stops)
+
+ax <- list(title = "", zeroline = FALSE, showline = FALSE, showticklabels = FALSE, showgrid = FALSE)
+
+bscols(widths = c(3, NA, NA),
+       filter_select("train", "Train", df, ~train, multiple = F),
+       leaflet(data = df, width = "100%") %>% addTiles() %>% 
+           #addMarkers(~longitude, ~latitude, label = ~as.character(NAME)),
+           addPolylines(~longitude, ~latitude, weight = 3, opacity = 5),
+        plot_ly(df, 
+                x = ~station_order, 
+                y = ~median_income, 
+                type = 'scatter', 
+                mode = 'lines+markers',
+                hoverinfo = 'text',
+                marker = list(color = 'rgb(255, 0, 0, .1', size = 5),
+                text = ~paste(NAME, '(', borough, ')', '</br></br>', currency(median_income))) %>%
+           layout(title = "NYC Subway And Income", xaxis = ax, yaxis = list(title = 'Median Income'))
+       )
+
+xfun::embed_file('~/data/subway_income/nyc_train_stops_income_order_borough2.csv', text = 'Download Subway Data')
+```
+
+## Post Script
+
+I ran into a couple of issues labeling stations that might be pertinent.
+
+* Chauncey St and Alabama Avenue in Brooklyn on the Z line seem to be the same station. The latter existed in my stations data set, so it got the station id of 11. The former has Alabama Avenue's spot on the MTA website.
+
+* The first four Manhattan stops coming from the Brooklyn direction are missing since they weren't in my stations data set. (Those are station ids 23-26.)
+
+* THe Q train has two Atlantic Center stops (ids 18 & 19) in my data.
+
+* I excluded the S (shuttle bus) line
