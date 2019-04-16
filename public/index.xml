@@ -6,7 +6,7 @@
     <description>Recent content on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 25 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,19 +14,20 @@
     <item>
       <title>Income &amp; New York&#39;s Subway</title>
       <link>/blog/income_nyc_subway/</link>
-      <pubDate>Mon, 25 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/income_nyc_subway/</guid>
-      <description>Introduction My favorite data visualization is Inequality And New York’s Subway. It provides a fascinating look into the city via its main circulatory system. The information is a bit dated now (the data is from 2011), and I’ve always wanted to update it. However, navigating the US Census Bureau’s data portal always ended with me closing the tab in frustration.</description>
+      <description>Introduction My favorite data visualization is Inequality And New York’s Subway. It provides a fascinating look into the city via its main circulatory system. The information is a bit dated now (the data is from 2011), and I’ve always wanted to update it. However, navigating the US Census Bureau’s data portal always ended with me closing the tab in frustration.
+My luck changed when Safe Graph released free neighborhood census data from 2016.</description>
     </item>
     
     <item>
       <title>Resume</title>
       <link>/resume/resume/</link>
-      <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 30 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/resume/resume/</guid>
-      <description>.col4 { columns: 4 100px; /* number of columns and width in pixels*/ -webkit-columns: 4 200px; /* chrome, safari */ -moz-columns: 4 200px; /* firefox */ } .col3 { columns: 3 100px; -webkit-columns: 3 100px; -moz-columns: 3 100px; } .col2 { columns: 2 100px; -webkit-columns: 2 100px; -moz-columns: 2 100px; } #column_container { width: 959px; margin: 0 auto; }   Gordon Fleetwood  gfleetwood.netlify.com gfleetwood@protonmail.com github.com/gfleetwood New York, NY Professional Experience Data Analyst: New Classrooms 2017 - Present  Applied Bayesian Analysis in R to evaluate optimal learning pathways for students Built a Machine Learning model in Python to predict the probability of a student learning specific Mathematical skills Leveraged SQL to pull data for information requests throughout the company Redesigned the ETL pipeline for reporting test results Wrote detailed reports for non-technical project stakeholders Wrote an internal R package to consolidate various data processing tasks Leveraged cloud computing for analyses with large data sets.</description>
+      <description></description>
     </item>
     
     <item>

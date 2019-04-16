@@ -23,7 +23,7 @@ enableRobotsTXT = true
 [params]
 author = "technologiad"
 intro = ""
-description = "This is my blog for recording my thoughts and projects"
+description = "A space for my thoughts and projects"
 authorimage = "headshot.jpg"
 dateformat = "Jan 2, 2006"
 
@@ -67,8 +67,3 @@ socialmarkup = true
     identifier = "projects"
     weight = 200
     url = "/projects/"
-[[menu.main]]
-    name = "resume"
-    identifier = "resume"
-    weight = 300
-    url = "/resume/resume"
