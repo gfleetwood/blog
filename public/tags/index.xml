@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on technologiad</title>
-    <link>/tags/</link>
+    <link>https://gfleetwood.netlify.com/tags/</link>
     <description>Recent content in Tags on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 28 Feb 2019 22:55:05 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 16 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gfleetwood.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>/tags/about/</link>
-      <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
-      
-      <guid>/tags/about/</guid>
-      <description></description>
-    </item>
     
     <item>
-      <title>Data Viz</title>
-      <link>/tags/data-viz/</link>
+      <title>data-viz</title>
+      <link>https://gfleetwood.netlify.com/tags/data-viz/</link>
       <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/data-viz/</guid>
+      <guid>https://gfleetwood.netlify.com/tags/data-viz/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Other</title>
-      <link>/tags/other/</link>
+      <title>other</title>
+      <link>https://gfleetwood.netlify.com/tags/other/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/tags/other/</guid>
+      <guid>https://gfleetwood.netlify.com/tags/other/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Projects</title>
-      <link>/tags/projects/</link>
+      <title>about</title>
+      <link>https://gfleetwood.netlify.com/tags/about/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
-      <guid>/tags/projects/</guid>
+      <guid>https://gfleetwood.netlify.com/tags/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>projects</title>
+      <link>https://gfleetwood.netlify.com/tags/projects/</link>
+      <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
+      
+      <guid>https://gfleetwood.netlify.com/tags/projects/</guid>
       <description></description>
     </item>
     

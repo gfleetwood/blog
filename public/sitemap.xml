@@ -3,111 +3,103 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/blog/income_nyc_subway/</loc>
+    <loc>https://gfleetwood.netlify.com/resume/resume/</loc>
+    <lastmod>2019-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/resume/</loc>
+    <lastmod>2019-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/</loc>
+    <lastmod>2019-09-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/blog/</loc>
     <lastmod>2019-04-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/resume/resume/</loc>
-    <lastmod>2019-03-30T00:00:00+00:00</lastmod>
+    <loc>https://gfleetwood.netlify.com/categories/</loc>
+    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/micropayments-journalism/</loc>
+    <loc>https://gfleetwood.netlify.com/tags/data-viz/</loc>
+    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/categories/data-viz/</loc>
+    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/blog/income_nyc_subway/</loc>
+    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/tags/</loc>
+    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/blog/micropayments-journalism/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://gfleetwood.netlify.com/categories/other/</loc>
+    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/tags/other/</loc>
+    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/about/</loc>
     <lastmod>2019-02-28T22:55:05-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/projects/</loc>
+    <loc>https://gfleetwood.netlify.com/tags/about/</loc>
     <lastmod>2019-02-28T22:55:05-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/first/</loc>
+    <loc>https://gfleetwood.netlify.com/categories/about/</loc>
+    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/categories/articles/</loc>
+    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/bookshelf/</loc>
+    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/projects/</loc>
+    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/tags/projects/</loc>
+    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gfleetwood.netlify.com/blog/first/</loc>
     <lastmod>2019-02-28T15:59:13-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/about/</loc>
-    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/about/</loc>
-    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/articles/</loc>
-    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/blog/</loc>
-    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/data-viz/</loc>
-    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/data-viz/</loc>
-    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/other/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/other/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/projects/</loc>
-    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/resume/</loc>
-    <lastmod>2019-03-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-04-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

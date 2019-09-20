@@ -9,8 +9,6 @@ title = "Bookshelf"
 showpagemeta = true
 +++
 
-## Books
-
 **Philosophy** 
 
 The Birth And Death of Meaning 
