@@ -59,15 +59,20 @@ socialmarkup = true
     identifier = "blog"
     url = "/blog/"
 [[menu.main]]
-    name = "bookshelf"
-    identifier = "bookshelf"
-    weight = 300
-    url = "/bookshelf/"
-[[menu.main]]
     name = "projects"
     identifier = "projects"
     weight = 200
     url = "/projects/"
+[[menu.main]]
+    name = "knowledge-base"
+    identifier = "knowledge-base"
+    weight = 300
+    url = "/knowledge-base/"
+[[menu.main]]
+    name = "bookshelf"
+    identifier = "bookshelf"
+    weight = 300
+    url = "/bookshelf/"
 [[menu.main]]
     name = "about"
     identifier = "about"

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>knowledge-base on technologiad</title>
+    <link>/tags/knowledge-base/</link>
+    <description>Recent content in knowledge-base on technologiad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 28 Feb 2019 22:55:05 -0400</lastBuildDate>
+    
+	<atom:link href="/tags/knowledge-base/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Knowledge Base</title>
+      <link>/knowledge-base/</link>
+      <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
+      
+      <guid>/knowledge-base/</guid>
+      <description>https://gfleetwood.github.io/notebook/
+https://github.com/gfleetwood/notebook/wiki
+https://gfleetwood.github.io/ds-notebook/
+https://gfleetwood.github.io/guides-and-snippets/
+https://github.com/gfleetwood/classes</description>
+    </item>
+    
+  </channel>
+</rss>

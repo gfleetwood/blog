@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>other on technologiad</title>
-    <link>https://gfleetwood.netlify.com/categories/other/</link>
+    <link>/categories/other/</link>
     <description>Recent content in other on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://gfleetwood.netlify.com/categories/other/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/other/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Microtransactions In Journalism</title>
-      <link>https://gfleetwood.netlify.com/blog/micropayments-journalism/</link>
+      <link>/blog/micropayments-journalism/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://gfleetwood.netlify.com/blog/micropayments-journalism/</guid>
+      <guid>/blog/micropayments-journalism/</guid>
       <description>The changing face of journalism has been written about extensively, which is unsurprising given the field’s major occupation. Advertistng driven revenue reached a peak of close to $50 billion dollars in about 2010 before being suffocated by the Google and Facebook juggernauts. Cue the shuttering of newsrooms and clearing of desks as the industry struggled to regain its footing in the digital age. Even new media companies who thought they had the nimbleness to avoid the fate of the old guard have stumbled.</description>
     </item>
     
     <item>
       <title>A New Start</title>
-      <link>https://gfleetwood.netlify.com/blog/first/</link>
+      <link>/blog/first/</link>
       <pubDate>Thu, 28 Feb 2019 15:59:13 -0400</pubDate>
       
-      <guid>https://gfleetwood.netlify.com/blog/first/</guid>
+      <guid>/blog/first/</guid>
       <description>After centuries of trying I finally mastered the art of blogdown. All it took was incremental version controlled changes and keeping git revert --hard close at hand. This is my third blog iteration after a Jekyll based version and Medium. They were both ill-equiped to handle Data Analysis heavy posts, so this setup is just right - especially after I figured out how to embed Jupyter notebooks in RMarkdown. For posteriority&amp;rsquo;s sake, here are links to Medium and RPubs.</description>
     </item>
     
