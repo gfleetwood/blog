@@ -1,0 +1,225 @@
+---
+title: "Google Drive As A Blogdown CMS"
+date: 2019-11-12
+categories: ["other"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, eval = FALSE)
+```
+
+The true catalyst for this work is lost to the annals of time (known as September 2019), but bits and pieces surface from time to time. They include musings on the Jamstack, GitHub as a personal data store, concatenating different services, and, perhaps most importantly, how to combine these with a multi-user blogging site based on blogdown. Actually, I'm missing another important cause in the wish to have a traditional Content Management System to acccomodate those who aren't familiar with markdown.
+
+Combined with my wish for simplicity and lack of experience and patience with dev ops and web development, my options were limited. They dwindled even more when promising leads like Netlify CMS, Ghost, and Writefreely vanished into the ether.
+
+Google Docs entered the running like a lightning on a clear day, but it made sense with its inbuilt user management, file metadata, and a traditional editor that most people are familiar with. Not to mention R's robust googledrive package that would make integration a smooth ride. 
+
+With that decision made, I outlined my plan of attack:
+
+* Create blog and deploy to Netlify with continuous integration from GitHub included
+
+* Format blog CMS on Google Drive
+
+* Parse blog posts from Google Drive into Blogdown
+
+* Trigger blog build from Google Drive
+
+I recommend this [post](https://alison.rbind.io/post/2017-06-12-up-and-running-with-blogdown/) for the first step. The product of the second ended up as a blog folder full of posts to be parsed, i.e blog/im-a-blog-post. After some headscratching on how to include tags, I eventually settled for a line within the file itself.
+
+<img src="/../../static/img/gdoc-cms.png" alt="" />
+
+![](gdoc-cms.png)
+
+Parsing required most of the work. I struggled with how to explain this, but ended up going with presented the code in its entirety with explanatory comments. Outside of the R libraries listed below you need to [install pandoc](https://pandoc.org/installing.html) for the conversion between docx and markdown.
+
+```{r}
+library(googledrive)
+library(glue)
+library(purrrlyr)
+library(readr)
+library(purrr)
+library(magrittr)
+
+# When developing locally the googledrive package prompts for manual authentication, but
+# explicit is better for deployment. Create and download an OAuth service from the Google
+# Developer Console and use it.
+
+drive_auth(path = "~/misc/goog-oauth.json")
+
+# Get the path to your blog for this variable.
+
+blog_loc = "{your-path-here}"
+static_loc = glue("{blog_loc}/static/post")
+
+# I added this folder explicitly to the blogdown folder to handle all the intermediate files
+# during the conversion process.
+
+gdoc_loc = glue("{blog_loc}/gdocs")
+
+setwd(blog_loc)
+
+# I settled for the very inefficient choice of rebuilding the entire blog from scratch
+# with each rebuild to sidestep potential issues of catching changes and duplications.
+# This code deletes all the posts and their associated media.
+
+system(glue("rm -rf {blog_loc}/content/post/*"))
+system(glue("rm -rf static_loc/*"))
+
+# This is the file id for the blog folder. The function reads all the posts in the folder
+# and their metadata into a dataframe.
+
+blog_posts = drive_ls(as_id("{your-blog-folder-file-id-here}"))
+
+# We process each post individually.
+
+by_row(blog_posts, ~ process_blog_post(.x), .collate = "col")
+
+# This function takes the tags parsed from a blog post and puts them into a form
+# to be used by blogdown. 
+
+get_tags <- function(){
+  
+  # Tags are in this form in the doc: "tags: image test, dog"
+  # We want them to in this form for the blog: "'image test','dog'"
+  
+  result <- read_file(glue("{gdoc_loc}/tags.txt")) %>% 
+    trimws() %>% 
+    strsplit(": ") %>%
+    unlist() %>% 
+    extract2(2) %>%
+    strsplit(", ") %>% 
+    map(~ paste("'", .x, "'", sep = "")) %>%
+    unlist() %>% 
+    paste(collapse = ",")
+  
+  return(result)
+  
+}
+
+# This is the workhorse of the entire process.
+
+process_blog_post <- function(blog_post){
+  
+  # First the post is downloaded as a docx file into the gdocs folder.
+    
+  drive_download(
+    file = as_id(blog_post$id),
+    path = glue("{gdoc_loc}/{blog_post$name}"),
+    overwrite = T)
+
+  # This code converts the docx to zip and then unzips in order to access the media files.
+  
+  system(glue("cp {gdoc_loc}/{blog_post$name}.docx {gdoc_loc}/{blog_post$name}.zip"))
+  system(glue("unzip {gdoc_loc}/{blog_post$name}.zip -d {gdoc_loc}/{blog_post$name}"))
+
+  # The media files are copied to the blog's static folder to a folder for the blog post.
+  
+  system(glue("mkdir -p {static_loc}/{blog_post$name}"))
+  system(glue("cp {gdoc_loc}/{blog_post$name}/word/media/* {static_loc}/{blog_post$name}"))
+
+  # Once that's done the docx file is converted to markdown.
+  
+  system(glue("pandoc -s {gdoc_loc}/{blog_post$name}.docx -t markdown -o {gdoc_loc}/{blog_post$name}.md"))
+
+  # Within this markdown file the word "media" is replaced with a link to the post's 
+  # static folder (/post/{blog_post$name} in this case) to regenerate said media. Note that 
+  # this differs between Hugo themes, so you might have to play around with the path. 
+  # A good rule of thumb is to assume the base path is either the static directory or the folder
+  # contained the actual blog post.
+  
+  system(glue("sed -i 's.media./post/{blog_post$name}.g' {gdoc_loc}/{blog_post$name}.md"))
+
+  # The tags are extracted from the post and removed.
+  system(glue('grep "tags" {gdoc_loc}/{blog_post$name}.md > {gdoc_loc}/tags.txt'))
+  system(glue('grep -v "tags" {gdoc_loc}/{blog_post$name}.md > {gdoc_loc}/temp2.md'))
+  system(glue("cp {gdoc_loc}/temp2.md {gdoc_loc}/{blog_post$name}.md"))
+
+  # Markdown specific metadata such as specifying an image's width and height doesn't
+  # seem to work so I removed the material, eg. {width="5.0in" height="7.5in"}.
+  system(glue("sed -i 's/{.*}//g' {gdoc_loc}/{blog_post$name}.md"))
+  
+  # And all this code adds the yaml front end to the post.
+  # The title, date, and author are extracted from its metadata in Google Drive.
+  
+  title = blog_post$drive_resource[[1]]$name
+  date = blog_post$drive_resource[[1]]$createdTime
+  author = blog_post$drive_resource[[1]]$owners[[1]]$displayName
+  tags = get_tags()
+  draft = "false"
+  
+  file_to_write <- c(
+    "+++",
+    glue('title = "{title}"'),
+    glue('date = "{date}"'),
+    glue('tags = [{tags}]'),
+    glue('draft = "{draft}"'),
+    glue('author = "{author}"'),
+    "+++"
+  )
+  
+  file_con <- file(glue("{gdoc_loc}/yaml-header.txt"))
+  writeLines(file_to_write, file_con)
+  close(file_con)
+  
+  system(glue("cat {gdoc_loc}/yaml-header.txt {gdoc_loc}/{blog_post$name}.md >> {gdoc_loc}/temp.md"))
+  system(glue("cp {gdoc_loc}/temp.md {gdoc_loc}/test.md -f"))
+  
+  # With all that done I move the post to the blog's content folder. One gotcha
+  # is that if two posts had the same name the last to be processed would be the only
+  # one to survive.
+  system(glue("mv {gdoc_loc}/{blog_post$name}.md {blog_loc}/content/post -f"))
+  
+  # Next delete all the files in the processing folder, build the site, and push 
+  # everything to GitHub
+  
+  system(glue("rm -rf {gdoc_loc}/*"))
+  
+  blogdown::build_dir(blog_loc)
+  
+  system(glue("git add . && git commit -m 'Add blog {blog_post$name}' && git push origin master"))
+  
+}
+
+# Ta da!
+```
+
+Now to deployment. For simplicity I moved the blog along with the script above to a server. The final piece of the puzzle was to trigger this process from Google Docs. After playing around with add-ons I settled for this simple Google script which sends a get request to an endpoint running on the server.
+
+```{js}
+function myFunction() {
+  var formData = {'test': 'post'};
+  var options = {'method' : 'get'}
+  UrlFetchApp.fetch('{your-end-point}', options);
+}
+```
+
+Triggering it hits this Flask endpoint which runs the script to build the blog. Why Flask? I tried plumber and nothing worked despite opening up the server's ports. The same happened when I switched to Flask, but then I hit on the right Stackoverflow answer that revealed I needed to set the host to 0.0.0.0 to expose the port. 
+
+```{python}
+from flask import Flask, request
+import os
+app = Flask(__name__) 
+
+@app.route("/")
+def hello():
+  return "Hello World!" 
+  
+@app.route('/meh', methods = ['GET'])
+def index2():
+  if request.method == 'GET':
+    os.system("Rscript {path-to-script}")
+    
+  return "Hello World!"
+
+if __name__ == "__main__":
+  app.run(host='0.0.0.0')
+```
+
+That's it. I can't speak to how well this would work for more complex blog content, but as a proof of concept I'm quite satisfied. I'm sure there is some headshaking somewhere about possible security issues with my deployment method. Feel free to send me a list of all of them.
+
+You can see the code [here](https://github.com/gfleetwood/gdocs-cms-blogdown) and the blog [here](https://sharp-montalcini-d9b5ea.netlify.com/).
+
+
+
+
+

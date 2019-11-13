@@ -6,15 +6,24 @@
     <description>Recent content on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 20 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Google Drive As A Blogdown CMS</title>
+      <link>/blog/gdocs-cms-blogdown/</link>
+      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/gdocs-cms-blogdown/</guid>
+      <description>The true catalyst for this work is lost to the annals of time (known as September 2019), but bits and pieces surface from time to time. They include musings on the Jamstack, GitHub as a personal data store, concatenating different services, and, perhaps most importantly, how to combine these with a multi-user blogging site based on blogdown. Actually, I’m missing another important cause in the wish to have a traditional Content Management System to acccomodate those who aren’t familiar with markdown.</description>
+    </item>
+    
+    <item>
       <title>Resume</title>
       <link>/resume/resume/</link>
-      <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>/resume/resume/</guid>
       <description></description>
@@ -49,12 +58,17 @@ My luck changed when Safe Graph released free neighborhood census data from 2016
     </item>
     
     <item>
-      <title>Bookshelf</title>
-      <link>/bookshelf/</link>
+      <title>Knowledge Base</title>
+      <link>/knowledge-base/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
-      <guid>/bookshelf/</guid>
-      <description>Philosophy
+      <guid>/knowledge-base/</guid>
+      <description>Notebooks https://github.com/gfleetwood/classes
+https://gfleetwood.github.io/notebook/
+https://gfleetwood.github.io/ds-notebook/
+https://gfleetwood.github.io/guides-and-snippets/
+Bookshelf Philosophy
+Restoring Pride, Richard Taylor
 The Birth And Death of Meaning
 The Book Of Disquiet
 Essays and Aphorisms
@@ -66,24 +80,8 @@ A Guide to the Good Life: The Ancient Art of Stoic Joy
 The Philosophy of Disenchantment
 The Anatomy of Negation
 STEM (Non-Technical)
-Intelligence: All That Matters
-A Mind at Play
-The Art of Thinking Clearly
-The Blank Slate
-The Black Swan</description>
-    </item>
-    
-    <item>
-      <title>Knowledge Base</title>
-      <link>/knowledge-base/</link>
-      <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
-      
-      <guid>/knowledge-base/</guid>
-      <description>https://gfleetwood.github.io/notebook/
-https://github.com/gfleetwood/notebook/wiki
-https://gfleetwood.github.io/ds-notebook/
-https://gfleetwood.github.io/guides-and-snippets/
-https://github.com/gfleetwood/classes</description>
+The Idea Factory
+Intelligence: All That Matters</description>
     </item>
     
     <item>

@@ -6,7 +6,6 @@ draft = false
 showpagemeta = true
 showcomments = true
 slug = ""
-tags = ["other"]
 title = "A New Start"
 description = "Christening my new blog"
 
