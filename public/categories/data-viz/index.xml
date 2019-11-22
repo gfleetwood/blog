@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>data-viz on technologiad</title>
-    <link>/categories/data-viz/</link>
+    <link>https://gfleetwood.netlify.com/categories/data-viz/</link>
     <description>Recent content in data-viz on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 16 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/data-viz/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gfleetwood.netlify.com/categories/data-viz/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Income &amp; New York&#39;s Subway</title>
-      <link>/blog/income_nyc_subway/</link>
+      <link>https://gfleetwood.netlify.com/blog/income_nyc_subway/</link>
       <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/income_nyc_subway/</guid>
+      <guid>https://gfleetwood.netlify.com/blog/income_nyc_subway/</guid>
       <description>Introduction My favorite data visualization is Inequality And New York’s Subway. It provides a fascinating look into the city via its main circulatory system. The information is a bit dated now (the data is from 2011), and I’ve always wanted to update it. However, navigating the US Census Bureau’s data portal always ended with me closing the tab in frustration.
 My luck changed when Safe Graph released free neighborhood census data from 2016.</description>
     </item>

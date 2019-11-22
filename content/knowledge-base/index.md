@@ -11,7 +11,7 @@ showpagemeta = false
 
 ## Notebooks
 
-https://github.com/gfleetwood/classes
+https://gfleetwood.github.io/classes/
 
 https://gfleetwood.github.io/notebook/
 
@@ -23,7 +23,7 @@ https://gfleetwood.github.io/guides-and-snippets/
 
 **Philosophy** 
 
-Restoring Pride, Richard Taylor
+Restoring Pride
 
 The Birth And Death of Meaning 
 
@@ -45,7 +45,7 @@ The Philosophy of Disenchantment
 
 The Anatomy of Negation 
 
-**STEM (Non-Technical)**
+**STEM**
 
 The Idea Factory
 
@@ -69,24 +69,6 @@ The Book Of Why
 
 The Demon Haunted World: Science As A Candle In The Dark
 
-The Art Of Thinking Clearly
-
-**STEM (Technical)**
-
-Think Python
-
-Fluent Python
-
-Python Machine Learning
-
-Empirical Bayes
-
-Data Science: Mindset, Methodologies, and Misconceptions
-
-Practical Data Science With R
-
-Forecasting: Principles & Practice
-
 **History**
 
 Sapiens
@@ -107,30 +89,28 @@ When Breath Becomes Air
 
 **Fiction**
 
+Milkweed Triptych Series
+
+Shadows Of the Apt Series
+
+The Monstrumologist Series
+
+The Divine Cities Series
+
+The Second Apocalypse Series
+
+Republic Commando Series
+
 The Fall of Gondolin
 
 The Children Of Hurin
 
 Children Of Time
 
-Milkweed Triptych Series
-
 The Gone World
 
 Shatterpoint
 
 Dune 
-
-Shadows Of the Apt 
-
-The Second Apocalypse Series
-
-The Monstrumologist
-
-The Divine Cities
-
-Republic Commando
-
-Children Of Time
 
 South of the Border, West of the Sun

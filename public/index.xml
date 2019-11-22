@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>technologiad</title>
-    <link>/</link>
+    <link>https://gfleetwood.netlify.com/</link>
     <description>Recent content on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 12 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gfleetwood.netlify.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Google Drive As A Blogdown CMS</title>
-      <link>/blog/gdocs-cms-blogdown/</link>
-      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/gdocs-cms-blogdown/</guid>
-      <description>The true catalyst for this work is lost to the annals of time (known as September 2019), but bits and pieces surface from time to time. They include musings on the Jamstack, GitHub as a personal data store, concatenating different services, and, perhaps most importantly, how to combine these with a multi-user blogging site based on blogdown. Actually, I’m missing another important cause in the wish to have a traditional Content Management System to acccomodate those who aren’t familiar with markdown.</description>
-    </item>
     
     <item>
       <title>Resume</title>
-      <link>/resume/resume/</link>
-      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
+      <link>https://gfleetwood.netlify.com/resume/resume/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/resume/resume/</guid>
+      <guid>https://gfleetwood.netlify.com/resume/resume/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Google Drive As A Blogdown CMS</title>
+      <link>https://gfleetwood.netlify.com/blog/gdocs-cms-blogdown/</link>
+      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://gfleetwood.netlify.com/blog/gdocs-cms-blogdown/</guid>
+      <description>The true catalyst for this work is lost to the annals of time (known as September 2019), but bits and pieces surface from time to time. They include musings on the Jamstack, GitHub as a personal data store, concatenating different services, and, perhaps most importantly, how to combine these with a multi-user blogging site based on blogdown. Actually, I’m missing another important cause in the wish to have a traditional Content Management System to acccomodate those who aren’t familiar with markdown.</description>
+    </item>
+    
+    <item>
       <title>Income &amp; New York&#39;s Subway</title>
-      <link>/blog/income_nyc_subway/</link>
+      <link>https://gfleetwood.netlify.com/blog/income_nyc_subway/</link>
       <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/income_nyc_subway/</guid>
+      <guid>https://gfleetwood.netlify.com/blog/income_nyc_subway/</guid>
       <description>Introduction My favorite data visualization is Inequality And New York’s Subway. It provides a fascinating look into the city via its main circulatory system. The information is a bit dated now (the data is from 2011), and I’ve always wanted to update it. However, navigating the US Census Bureau’s data portal always ended with me closing the tab in frustration.
 My luck changed when Safe Graph released free neighborhood census data from 2016.</description>
     </item>
     
     <item>
       <title>Microtransactions In Journalism</title>
-      <link>/blog/micropayments-journalism/</link>
+      <link>https://gfleetwood.netlify.com/blog/micropayments-journalism/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/micropayments-journalism/</guid>
+      <guid>https://gfleetwood.netlify.com/blog/micropayments-journalism/</guid>
       <description>The changing face of journalism has been written about extensively, which is unsurprising given the field’s major occupation. Advertistng driven revenue reached a peak of close to $50 billion dollars in about 2010 before being suffocated by the Google and Facebook juggernauts. Cue the shuttering of newsrooms and clearing of desks as the industry struggled to regain its footing in the digital age. Even new media companies who thought they had the nimbleness to avoid the fate of the old guard have stumbled.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://gfleetwood.netlify.com/about/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://gfleetwood.netlify.com/about/</guid>
       <description>I’m Gordon. I studied Math in college and discovered Data Science through Numerical Analysis. This is my space for documenting my projects in Data Science and other areas.</description>
     </item>
     
     <item>
       <title>Knowledge Base</title>
-      <link>/knowledge-base/</link>
+      <link>https://gfleetwood.netlify.com/knowledge-base/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
-      <guid>/knowledge-base/</guid>
-      <description>Notebooks https://github.com/gfleetwood/classes
+      <guid>https://gfleetwood.netlify.com/knowledge-base/</guid>
+      <description>Notebooks https://gfleetwood.github.io/classes/
 https://gfleetwood.github.io/notebook/
 https://gfleetwood.github.io/ds-notebook/
 https://gfleetwood.github.io/guides-and-snippets/
 Bookshelf Philosophy
-Restoring Pride, Richard Taylor
+Restoring Pride
 The Birth And Death of Meaning
 The Book Of Disquiet
 Essays and Aphorisms
@@ -79,17 +79,18 @@ The Philosophical Writings of Edgar Saltus
 A Guide to the Good Life: The Ancient Art of Stoic Joy
 The Philosophy of Disenchantment
 The Anatomy of Negation
-STEM (Non-Technical)
+STEM
 The Idea Factory
-Intelligence: All That Matters</description>
+Intelligence: All That Matters
+A Mind at Play</description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>/projects/</link>
+      <link>https://gfleetwood.netlify.com/projects/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
-      <guid>/projects/</guid>
+      <guid>https://gfleetwood.netlify.com/projects/</guid>
       <description>Data Science 
 Pass Prediction In Soccer
 Links: [Blog] | [Code]
@@ -99,10 +100,10 @@ Summary: The main pipeline involved feature engineering to create a feature for 
     
     <item>
       <title>A New Start</title>
-      <link>/blog/first/</link>
+      <link>https://gfleetwood.netlify.com/blog/first/</link>
       <pubDate>Thu, 28 Feb 2019 15:59:13 -0400</pubDate>
       
-      <guid>/blog/first/</guid>
+      <guid>https://gfleetwood.netlify.com/blog/first/</guid>
       <description>After centuries of trying I finally mastered the art of blogdown. All it took was incremental version controlled changes and keeping git revert --hard close at hand. This is my third blog iteration after a Jekyll based version and Medium. They were both ill-equiped to handle Data Analysis heavy posts, so this setup is just right - especially after I figured out how to embed Jupyter notebooks in RMarkdown. For posteriority&amp;rsquo;s sake, here are links to Medium and RPubs.</description>
     </item>
     
