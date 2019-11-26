@@ -6,7 +6,7 @@
     <description>Recent content on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 21 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gfleetwood.netlify.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Resume</title>
       <link>https://gfleetwood.netlify.com/resume/resume/</link>
-      <pubDate>Thu, 21 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://gfleetwood.netlify.com/resume/resume/</guid>
       <description></description>
@@ -63,7 +63,8 @@ My luck changed when Safe Graph released free neighborhood census data from 2016
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
       <guid>https://gfleetwood.netlify.com/knowledge-base/</guid>
-      <description>Notebooks https://gfleetwood.github.io/classes/
+      <description>Notebooks https://teul-io.github.io/open-x/
+https://gfleetwood.github.io/classes/
 https://gfleetwood.github.io/notebook/
 https://gfleetwood.github.io/ds-notebook/
 https://gfleetwood.github.io/guides-and-snippets/

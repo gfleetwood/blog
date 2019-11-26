@@ -11,6 +11,8 @@ showpagemeta = false
 
 ## Notebooks
 
+https://teul-io.github.io/open-x/
+
 https://gfleetwood.github.io/classes/
 
 https://gfleetwood.github.io/notebook/
