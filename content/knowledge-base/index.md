@@ -71,7 +71,9 @@ The Book Of Why
 
 The Demon Haunted World: Science As A Candle In The Dark
 
-**History**
+**Non-Fiction**
+
+When Breath Becomes Air
 
 Sapiens
 
@@ -79,15 +81,9 @@ Empire: What Ruling The World Did To The British
 
 Persian Fire
 
-**Business**
-
 Loonshots
 
 Hooked
-
-**Non-Fiction**
-
-When Breath Becomes Air
 
 **Fiction**
 
