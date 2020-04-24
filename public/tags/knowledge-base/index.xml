@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>knowledge-base on technologiad</title>
-    <link>https://gfleetwood.netlify.com/tags/knowledge-base/</link>
+    <link>/tags/knowledge-base/</link>
     <description>Recent content in knowledge-base on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Thu, 28 Feb 2019 22:55:05 -0400</lastBuildDate>
     
-	<atom:link href="https://gfleetwood.netlify.com/tags/knowledge-base/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/knowledge-base/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Knowledge Base</title>
-      <link>https://gfleetwood.netlify.com/knowledge-base/</link>
+      <link>/knowledge-base/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
-      <guid>https://gfleetwood.netlify.com/knowledge-base/</guid>
+      <guid>/knowledge-base/</guid>
       <description>Notebooks https://teul-io.github.io/open-x/
 https://gfleetwood.github.io/classes/
 https://gfleetwood.github.io/notebook/
@@ -32,12 +32,11 @@ The Enchiridion
 The Last Messiah
 The Philosophical Writings of Edgar Saltus
 A Guide to the Good Life: The Ancient Art of Stoic Joy
-The Philosophy of Disenchantment
-The Anatomy of Negation
 STEM
 The Idea Factory
 Intelligence: All That Matters
-A Mind at Play</description>
+A Mind at Play
+The Art of Thinking Clearly</description>
     </item>
     
   </channel>

@@ -1,0 +1,35 @@
+---
+title: "Automatic Audio Books"
+date: 2020-04-21
+categories: ["other"]
+---
+
+
+
+<p>Ideas on my “Someday” list usually spend a couple of weeks before leaving forever or returning in disgrace (mine not its). “Can I automatically create an audiobook?” had a successful turn around of less than 48 hours. Well, mostly. Eschewing an <a href="https://github.com/keithito/tacotron">artisanal</a> text to speech engine for a ready made one can be expensive, so I only did 4,754 characters out of 734,582.</p>
+<p>The book I choose was Carroll Quigley’s “The Evolution Of Civilizations”. I’m at a point where I am militantly electronic with my reading, so the pdf link from Twitter was perfect. Skimming the book I got the sense that I’d prefer to listen rather than read it, a bifurcation that I recently created after ignoring audiobooks for years. Amazon’s lack of an audiobook was some how made worse by only having physical books. It was at this point that auto-generation entered my mind.</p>
+<p>The quick turnaround is the small visible part of an enormous glacier. Beneath the surface lies hours of previous research into pdf extraction and text to speech (also speech to text). The pipeline and its implementation existed as one entity in my mind:</p>
+<ul>
+<li>Use pdf extraction to get the text</li>
+</ul>
+<pre><code>library(pdftools)
+
+text_extracted &lt;- pdf_text(&quot;auto-audio-book/CarrollQuigley-TheEvolutionOfCivilizations-AnIntroductionToHistoricalAnalysis1979.pdf&quot;)
+
+text_concatenated &lt;- paste(text_extracted, collapse = &quot; &quot;)
+con &lt;- file(&quot;evol_of_civilizations.txt&quot;)
+writeLines(text_concatenated, con)
+close(con)</code></pre>
+<p>Check.</p>
+<ul>
+<li>Clean the text</li>
+</ul>
+<p>Errr…I skipped this part due to this being a proof of concept and the tediousness of the task. This would mostly include remember footers, references, the table of contents, etc. Alternatively this could be down after the TTS using a service like <a href="https://www.descript.com/">descript</a>.</p>
+<ul>
+<li>Use text to speech to create the audio</li>
+</ul>
+<p>I went with <a href="https://hearling.com/">Hearling</a> for this part. After choosing a <a href="https://cloud.google.com/text-to-speech/docs/wavenet">Wavenet voice</a> and pasting in the first part of the book I got an mp3 seconds later.</p>
+<ul>
+<li>Success!</li>
+</ul>
+<p>That was pretty much it. It lacks the sophistication of a robust implementation but it works. An obvious improvement would entail an automated pipeline with an API TTS service. A possible end to end implementation might already exist as <a href="https://www.getspeechify.com/">Speechify</a>.</p>

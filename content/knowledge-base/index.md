@@ -43,10 +43,6 @@ The Philosophical Writings of Edgar Saltus
 
 A Guide to the Good Life: The Ancient Art of Stoic Joy 
 
-The Philosophy of Disenchantment 
-
-The Anatomy of Negation 
-
 **STEM**
 
 The Idea Factory

@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on technologiad</title>
-    <link>https://gfleetwood.netlify.com/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 12 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://gfleetwood.netlify.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>other</title>
-      <link>https://gfleetwood.netlify.com/categories/other/</link>
-      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
+      <link>/categories/other/</link>
+      <pubDate>Tue, 21 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://gfleetwood.netlify.com/categories/other/</guid>
+      <guid>/categories/other/</guid>
       <description></description>
     </item>
     
     <item>
       <title>data-viz</title>
-      <link>https://gfleetwood.netlify.com/categories/data-viz/</link>
+      <link>/categories/data-viz/</link>
       <pubDate>Tue, 16 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://gfleetwood.netlify.com/categories/data-viz/</guid>
+      <guid>/categories/data-viz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>about</title>
-      <link>https://gfleetwood.netlify.com/categories/about/</link>
+      <link>/categories/about/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
-      <guid>https://gfleetwood.netlify.com/categories/about/</guid>
+      <guid>/categories/about/</guid>
       <description></description>
     </item>
     
     <item>
       <title>articles</title>
-      <link>https://gfleetwood.netlify.com/categories/articles/</link>
+      <link>/categories/articles/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
-      <guid>https://gfleetwood.netlify.com/categories/articles/</guid>
+      <guid>/categories/articles/</guid>
       <description></description>
     </item>
     
