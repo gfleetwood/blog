@@ -1,14 +1,14 @@
 ---
 title: "Automatic Audio Books"
-date: 2020-04-21
+date: 2020-04-24
 categories: ["other"]
 ---
 
 
 
-<p>Ideas on my “Someday” list usually spend a couple of weeks before leaving forever or returning in disgrace (mine not its). “Can I automatically create an audiobook?” had a successful turn around of less than 48 hours. Well, mostly. Eschewing an <a href="https://github.com/keithito/tacotron">artisanal</a> text to speech engine for a ready made one can be expensive, so I only did 4,754 characters out of 734,582.</p>
-<p>The book I choose was Carroll Quigley’s “The Evolution Of Civilizations”. I’m at a point where I am militantly electronic with my reading, so the pdf link from Twitter was perfect. Skimming the book I got the sense that I’d prefer to listen rather than read it, a bifurcation that I recently created after ignoring audiobooks for years. Amazon’s lack of an audiobook was some how made worse by only having physical books. It was at this point that auto-generation entered my mind.</p>
-<p>The quick turnaround is the small visible part of an enormous glacier. Beneath the surface lies hours of previous research into pdf extraction and text to speech (also speech to text). The pipeline and its implementation existed as one entity in my mind:</p>
+<p>Ideas on my “Someday” list usually spend a couple of weeks before leaving forever or returning in disgrace (mine not its). “Can I automatically create an audiobook?” had a successful turn around of about three days.</p>
+<p>The book I choose was Carroll Quigley’s “The Evolution Of Civilizations”. I’m at a point where I am militantly electronic with my reading, so the pdf link from Twitter was perfect. Skimming the book I got the sense that I’d prefer to listen rather than read it - a bifurcation that I recently adopted after ignoring audiobooks for years. No audiobook on Amazon’s left me only one option. (Well there was the possibility of using an end to end implementation like <a href="https://www.getspeechify.com/">Speechify</a> but where would be the fun in that?)</p>
+<p>Three days from idea to completion is the small, visible part of an enormous glacier. Beneath the surface lies hours of previous research into pdf extraction and text to speech (also speech to text) programs. The pipeline and its implementation almost immediately existed as one entity in my mind. Here was my process:</p>
 <ul>
 <li>Use pdf extraction to get the text</li>
 </ul>
@@ -24,12 +24,65 @@ close(con)</code></pre>
 <ul>
 <li>Clean the text</li>
 </ul>
-<p>Errr…I skipped this part due to this being a proof of concept and the tediousness of the task. This would mostly include remember footers, references, the table of contents, etc. Alternatively this could be down after the TTS using a service like <a href="https://www.descript.com/">descript</a>.</p>
+<p>So I lied about the automatically part. I still had to go into the document and delete footers, references, the table of contents, etc, and I left stuff in there because it was too tedious to go through a 400+ page book to get every single one. Much easier to ignore them while listening. Alternatively this could be done after the text to speech conversion using a service like <a href="https://www.descript.com/">descript</a>.</p>
 <ul>
 <li>Use text to speech to create the audio</li>
 </ul>
-<p>I went with <a href="https://hearling.com/">Hearling</a> for this part. After choosing a <a href="https://cloud.google.com/text-to-speech/docs/wavenet">Wavenet voice</a> and pasting in the first part of the book I got an mp3 seconds later.</p>
-<ul>
-<li>Success!</li>
-</ul>
-<p>That was pretty much it. It lacks the sophistication of a robust implementation but it works. An obvious improvement would entail an automated pipeline with an API TTS service. A possible end to end implementation might already exist as <a href="https://www.getspeechify.com/">Speechify</a>.</p>
+<p>This turned out to be more of a hassle than I thought it would be. First I went through Google’s convoluted process to get the Text To Speech API working. Then my attempt at making a single mp3 was thwarted by the API’s limits. Some chunking left me with 180 separate mp3s to combine. Add in some waiting to stay under the API’s temporal limits left me filling some time while the script ran. In retrospect I should have used the multiprocess module to speed it up.</p>
+<pre class="python"><code>from google.cloud import texttospeech
+import time
+
+def tts_book(ind, text_chunk):
+    # Instantiates a client
+    client = texttospeech.TextToSpeechClient()
+
+    # Set the text input to be synthesized
+    synthesis_input = texttospeech.types.SynthesisInput(text = text_chunk)
+
+    # Build the voice request, select the language code (&quot;en-US&quot;) and the ssml
+    # voice gender (&quot;neutral&quot;)
+    voice = texttospeech.types.VoiceSelectionParams(
+        language_code = &#39;en-US-Wavenet-B&#39;,
+        ssml_gender = texttospeech.enums.SsmlVoiceGender.NEUTRAL)
+
+    # Select the type of audio file you want returned
+    audio_config = texttospeech.types.AudioConfig(
+        audio_encoding = texttospeech.enums.AudioEncoding.MP3)
+
+    # Perform the text-to-speech request on the text input with the selected
+    # voice parameters and audio file type
+    response = client.synthesize_speech(synthesis_input, voice, audio_config)
+
+    # The response&#39;s audio_content is binary.
+    with open(&#39;output_{}.mp3&#39;.format(ind), &#39;wb&#39;) as out:
+        # Write the response to the output file.
+        out.write(response.audio_content)
+        print(&#39;Audio content written to file &quot;output_{}.mp3&quot;&#39;.format(ind))
+        
+    return(1)
+
+with open(&quot;auto-audio-book/evol-of-civilizations-cleaned.txt&quot;, &quot;r&quot;) as f:
+    evol_civ = f.read().replace(&quot;\n&quot;, &quot; &quot;)
+
+chunks = []
+temp = evol_civ
+
+while len(temp) != 0:
+    
+    chunks.append(temp[:4000])
+    temp = temp[4000:]
+    
+for ind, chunk in enumerate(chunks): 
+    _ = tts_book(ind, chunk)
+    time.sleep(10)</code></pre>
+<p>It was a pretty small wrench though. I knew ffmpeg was the solution I needed. The tricky bit was in getting it to work. After some Googling I assembled the parts:</p>
+<pre class="bash"><code># Get all the mp3 names and write them to a text file.
+ls | grep &quot;output&quot; &gt; mp3-files.txt
+
+# Prepend the word &quot;file&quot; to each line of said text file.
+awk &#39;{print &quot;file &quot; $0}&#39; mp3-files.txt &gt; mp3-files.txt
+
+# Bring in the heavy guns to apply the coup de grace and produce the combined file
+ffmpeg -f concat -safe 0 -i mp3-files.txt -c copy output-final.mp3</code></pre>
+<p>Success!</p>
+<p>It lacks the sophistication of a robust pipeline but it works. Maybe I’ll make an auto audio book srvice. You can find the pdf <a href="https://archive.org/details/CarrollQuigley-TheEvolutionOfCivilizations-AnIntroductionTo/mode/2up">here</a> and the mp3 <a href="https://drive.google.com/open?id=1LF0sS0gEhleakG6BEB8ItY47pUlro738">here</a>.</p>
