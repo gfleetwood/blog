@@ -28,7 +28,7 @@ close(con)</code></pre>
 <ul>
 <li>Use text to speech to create the audio</li>
 </ul>
-<p>This turned out to be more of a hassle than I thought it would be. First I went through Google’s convoluted process to get the Text To Speech API working. Then my attempt at making a single mp3 was thwarted by the API’s limits. Some chunking left me with 180 separate mp3s to combine. Add in some waiting to stay under the API’s temporal limits left me filling some time while the script ran. In retrospect I should have used the multiprocess module to speed it up.</p>
+<p>This turned out to be more of a hassle than I thought it would be. First I went through Google’s convoluted process to get the Text To Speech API working. Then my attempt at making a single mp3 was thwarted by the API’s limits. Chunking the file and adding in a delay (*What felt like two hours later*) left me with 180 separate mp3s. (In retrospect I should have used the multiprocess module to speed it up.)</p>
 <pre class="python"><code>from google.cloud import texttospeech
 import time
 
@@ -43,11 +43,13 @@ def tts_book(ind, text_chunk):
     # voice gender (&quot;neutral&quot;)
     voice = texttospeech.types.VoiceSelectionParams(
         language_code = &#39;en-US-Wavenet-B&#39;,
-        ssml_gender = texttospeech.enums.SsmlVoiceGender.NEUTRAL)
+        ssml_gender = texttospeech.enums.SsmlVoiceGender.NEUTRAL
+        )
 
     # Select the type of audio file you want returned
     audio_config = texttospeech.types.AudioConfig(
-        audio_encoding = texttospeech.enums.AudioEncoding.MP3)
+        audio_encoding = texttospeech.enums.AudioEncoding.MP3
+        )
 
     # Perform the text-to-speech request on the text input with the selected
     # voice parameters and audio file type
@@ -82,7 +84,7 @@ ls | grep &quot;output&quot; &gt; mp3-files.txt
 # Prepend the word &quot;file&quot; to each line of said text file.
 awk &#39;{print &quot;file &quot; $0}&#39; mp3-files.txt &gt; mp3-files.txt
 
-# Bring in the heavy guns to apply the coup de grace and produce the combined file
+# Bring in the heavy guns to produce the combined file
 ffmpeg -f concat -safe 0 -i mp3-files.txt -c copy output-final.mp3</code></pre>
 <p>Success!</p>
-<p>It lacks the sophistication of a robust pipeline but it works. Maybe I’ll make an auto audio book srvice. You can find the pdf <a href="https://archive.org/details/CarrollQuigley-TheEvolutionOfCivilizations-AnIntroductionTo/mode/2up">here</a> and the mp3 <a href="https://drive.google.com/open?id=1LF0sS0gEhleakG6BEB8ItY47pUlro738">here</a>.</p>
+<p>It lacks the sophistication of a robust pipeline but it works. Maybe I’ll make an auto audio book creation service. You can find the pdf <a href="https://archive.org/details/CarrollQuigley-TheEvolutionOfCivilizations-AnIntroductionTo/mode/2up">here</a> and the mp3 <a href="https://drive.google.com/open?id=1LF0sS0gEhleakG6BEB8ItY47pUlro738">here</a>.</p>

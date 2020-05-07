@@ -11,15 +11,13 @@ showpagemeta = false
 
 ## Notebooks
 
-https://teul-io.github.io/open-x/
+[Open Source Resources](https://teul-io.github.io/open-x/)
 
-https://gfleetwood.github.io/classes/
+[Class Notes](https://gfleetwood.github.io/classes/)
 
-https://gfleetwood.github.io/notebook/
+[Genersl Notebook](https://gfleetwood.github.io/notebook/)
 
-https://gfleetwood.github.io/ds-notebook/
-
-https://gfleetwood.github.io/guides-and-snippets/
+[Data Science Notebook](https://gfleetwood.github.io/ds-notebook/)
 
 ## Bookshelf
 
@@ -69,11 +67,13 @@ The Demon Haunted World: Science As A Candle In The Dark
 
 **Non-Fiction**
 
+Empire: What Ruling The World Did To The British
+
+The Checklist Manifesto
+
 When Breath Becomes Air
 
 Sapiens
-
-Empire: What Ruling The World Did To The British
 
 Persian Fire
 
@@ -93,7 +93,7 @@ The Divine Cities Series
 
 The Second Apocalypse Series
 
-Republic Commando Series
+Dune Series
 
 The Fall of Gondolin
 
@@ -104,7 +104,5 @@ Children Of Time
 The Gone World
 
 Shatterpoint
-
-Dune 
 
 South of the Border, West of the Sun

@@ -1,0 +1,264 @@
+---
+title: Augmenting GitHub Stars Management
+author: Gordon Fleetwood
+date: '2020-05-07'
+slug: augmenting-starred-repos-on-github
+categories: []
+tags: []
+comments: no
+showcomments: yes
+showpagemeta: yes
+---
+
+## Introduction
+
+Think of a piece of software you frequently use and a feature wishlist will likely follow. My list for GitHub mine includes custom tags for starred repositories. I am a simple man.
+
+GitHub's current support isn't too shabby. There's a language filter, three sorting criteria, and a decent search function which works with (creator supplied) tags. However, the inability to add my own tags to my 1500+ strong collection is the imperfection that ruins the experience. It's a small thing in the possible world of new features GitHub, but it would have an outsized effect on my productivity. 
+
+How am I functioning now? There are custom tagging options out there including a chrome extension and web apps like Astral - which served me well. As my number of starred repos grew Astral strained under the weight, and the push for a replacement beckoned. 
+
+My initial plan was to build my own web app and scale as needed. As a seemingly continual web dev novice the task seemed a bit daunting, but I threw myself into it. In the midst of reading about designing a schema for tags an idea struck. Why not just use GitHub? GitHub as a CMS has been on my mind since seeing the ingenious use of a [repo's issues as a blog](https://github.com/lukego/blog). The best place to have tagged stars was on GitHub. GitHub issues had tags built in, and an advanced search functionality that put the official starred repos search bar to shame.
+
+The pivot was on.
+
+## Managing Repos With The GitHub API
+
+After some experimentation I teased out the CRUD paradigm for GitHub I needed:
+
+```
+from github import Github
+import json
+
+g = Github(os.environ["GHUB"])
+
+repo = g.get_repo("gfleetwood/test")
+
+# CREATE: issue
+repo.create_issue(title = "This is a new issue 2", body = "This is the issue body", labels = ["python", "magic"])
+
+# READ: issue
+iss = repo.get_issue(number = 3)
+
+# UPDATE: issue
+iss.edit(title = "Changing Title", body = "https://example.com")
+
+# DELETE: issue
+
+# There's no deletion in the GitHub Rest API (strangely it exists in the GraphQL API) so use closing to simulate
+iss.edit(state = "closed")
+```
+
+The PyGithub package is fairly easy to use as it mirror the GitHub API so directly that you have two sets of documentation to reference. A full CMS workflow would include CRUD for files and repositories. I noted those as well but omitted them here.
+
+## Getting Stars Data From GitHub
+
+I mostly mirrored the info from Astral here. That boiled down to the repo id, name, url, description, and language. (The code from here on is the contents of a Jupyter notebook split across different sections.)
+
+```
+import pandas as pd
+from github import Github
+import os
+
+g = Github(os.environ["GHUB"])
+likes = [r for r in g.get_user().get_starred()]
+
+likes_data = [
+    # The replacing in the url is formatting to create the actual web link
+    [repo.id, repo.full_name, repo.url.replace("api.", "").replace("repos/", ""), repo.description, repo.language]
+    for repo in likes
+]
+
+likes_df = pd.DataFrame(
+    likes_data, 
+    columns = ["repo_id", "name", "url", "description", "language"]
+)
+
+likes_df.head()
+```
+
+## Getting My Astral Data
+
+A fresh start would skip this section. I wasn't going to waste all my hard work tagging items in Astral though. The app supports exporting data as json, and after some sleuthing I figured out that repo ids were the (local) unique identifier (apparently on GitHub they're not unique), and massaged the data into a dataframe.
+
+```
+import json
+import pandas as pd
+
+with open("my_astral_data.json", "r") as f:
+    astral_raw_data = f.read()
+
+astral_dict = json.loads(astral_raw_data)
+
+astral_df = pd.DataFrame([
+    [astral_dict[x]['repo_id'], ','.join(y['name'] for y in astral_dict[x]['tags'])]
+    for x in astral_dict.keys()], 
+    columns = ['repo_id', 'tags']
+)
+```
+
+### Data Combination
+
+After some validation, combining language and tags, and filling in missing values, it was time for the coup de grace.
+
+```
+ghub_star_data = pd.merge(likes_df, astral_df, on = ["repo_id"])
+ghub_star_data["tags_lang"] = ghub_star_data["tags"] + "," + ghub_star_data["language"]
+
+ghub_star_data = ghub_star_data.fillna(
+    value = {'description': "No Description", 'tags_lang': "no-tag"}
+)
+```
+
+# Behold Asteres
+
+Asteres is the Greek word for stars. As I'm writing this I realize using the Greek word for sky (Ouranos) would have been more fitting. In any case, the hard work was done. All that was left was to fill the repo's issues. (I manually create the repo but it could have easily been done through the API.)
+
+```
+import time
+
+def create_issue_from_starred_repo_df(df, repo):
+    """
+    Takes in a dataframe of a starred repos data and makes it a issue
+    for the repo
+    """
+    
+    issue_title = "{} ({})".format(df['name'], df['repo_id'])
+    issue_body = "{}\n\n{}".format(df['url'], df['description'])
+    issue_tags = [tag for tag in df['tags_lang'].split(",")]
+    
+    if issue_tags[0] == "no-tag":
+          
+        repo.create_issue(
+          title = issue_title, 
+          body = issue_body
+          )
+    else:
+        repo.create_issue(
+          title = issue_title, 
+          body = issue_body, 
+          labels = issue_tags
+          )
+    
+    # This is usually processed functionally as a batch so the delay
+    # sidesteps GitHub API limiting
+    time.sleep(3)
+    
+    return(1)
+    
+repo = g.get_repo("gfleetwood/asteres")
+ghub_star_data["written_to_repo"] = ghub_star_data.apply(lambda x: like_to_issue(x, repo), axis = 1)
+```
+
+I added the delay to sidestep an API throttling warning so this took a while. Finally, I locked the issues.
+
+```
+# Lock issues
+issues = [x for x in repo.get_issues()]
+_ = [x.lock("resolved") for x in issues]
+```
+
+## Updating
+
+Now to keep the repo in sync with the starred collection. In my ideal world GitHub would have webhooks for user actions like starring reposities. In this world I used a GitHub Actions cron job to trigger a Heroku Flask endpoint to update Asteres if needed every 12 hours:
+
+```
+# asteres/.github/workflows/curl.yml
+
+name: "Trigger Update"
+on:
+  schedule:
+  - cron: "0 */12 * * *"
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: https://asteres.herokuapp.com/update
+```
+
+"Every 12 hours?!" Initially it was every hour but meditating on my history of realtime tagging made me realize that it wasn't necessary. Here's the Flask endpoint:
+
+```
+from github import Github
+import json
+import os
+from flask import Flask, make_response, request, jsonify, render_template
+
+def create_issue_from_starred_repo(star, repo):
+  
+    issue_title = "{} ({})".format(star[1], star[0])
+    issue_body = "{}\n\n{}".format(star[2], star[3])
+    issue_lang = star[4]
+    
+    if issue_lang is None:
+        repo.create_issue(title = issue_title, body = issue_body)
+    else:
+        repo.create_issue(title = issue_title, body = issue_body, labels = [issue_lang])
+        
+    time.sleep(3)
+      
+    return(1)
+
+def read_repo_id_from_issue(issue):
+    
+    title = issue.title
+    result = int(title.split("(")[1].replace(")", ""))
+    
+    return(result)
+
+app = Flask(__name__)
+g = Github(os.environ["GHUB"])
+g_usr = g.get_user()
+repo = g_usr.get_repo("asteres")
+
+@app.route("/")
+def hello():
+    return("1")
+
+@app.route("/update", methods = ["GET"])
+def updater():
+      
+    likes = [
+        # The replacing in the url is formatting to create the actual web link
+        [repo.id, repo.full_name, repo.url.replace("api.", "").replace("repos/", ""), repo.description, repo.language]
+        for repo in  g.get_user().get_starred()
+    ]
+    
+    issues = [x for x in repo.get_issues()]
+    
+    if len(issues) == 0:
+        _ = [create_issue_from_starred_repo(repo) for repo in likes]
+        return("1")
+    
+    issue_ids = {hf.read_repo_id_from_issue(x) for x in issues}
+    like_ids = {x[0] for x in likes}
+    
+    repos_to_add = [x for x in likes if x[0] in like_ids.difference(issue_ids)]
+    
+    repos_to_close = [
+      x for x in issues 
+      if hf.read_repo_id_from_issue(x) in issue_ids.difference(like_ids)
+      ]
+      
+    _ = [issue.edit(state = "closed") for issue in repos_to_close]
+    _ = [create_issue_from_starred_repo(star, repo) for star in repos_to_add]
+          
+    return("1")
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host = '0.0.0.0', port = port, debug = True)
+```
+
+## Conclusion
+
+Ever so often in building this workflow I stopped to wonder whether or not this was worth no using a "proper" web app solution. GitHub is not a (realtime) web database, and I could use the pain of learning how to manage one of those. I went ahead for a couple of reasons. One, as I already mentioned, was that I felt GitHub should be the place where this exists. The second was the interest in this as a proof of concept for using GitHub in an unusual way.
+
+You can find an example repo [**here**](https://github.com/gfleetwood/asteres-template) along with code and instructions for making your own Asteres repo. (My own version is private.)
+
+
+
+
