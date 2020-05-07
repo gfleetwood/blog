@@ -32,26 +32,32 @@ Summary: The final model utilized the Random Forest Classifier and achieved 76% 
 
 ## Software
 
+**asteres**
+
+[[Repo]](https://github.com/gfleetwood/asteres-template)
+
+An extension to include tag management for starred GitHub repositories by representing them as repo issues. Syncing is done with a Github Action working and a Heroku Flask endpoint.
+
 **cantor**
 
-Links: [[Site]](https://cantor.bubbleapps.io/)
+[[Site]](https://cantor.bubbleapps.io/)
 
-Description: A website to follow GitHub organizations. Users are notified whenever new repositories are created. The front end uses a no code platform called Bubble to take care of user and database management. The back end uses Python for processing data, updating data, and sending emails.
+A website to follow GitHub organizations. Users are notified whenever new repositories are created. The front end uses a no code platform called Bubble to take care of user and database management. The back end uses Python for processing data, updating data, and sending emails.
 
 **handyman**
 
-Links: [[Code]](https://github.com/gfleetwood/handyman)
+[[Repo]](https://github.com/gfleetwood/handyman)
 
-Description: A collection of personal Python Data Science scripts. 
+A collection of personal Python Data Science scripts. 
 
 **sansor**
 
-Links: [[Code]](https://github.com/gfleetwood/sansor)
+[[Repo]](https://github.com/gfleetwood/sansor)
 
-Description: A collection of personal R Data Science scripts.
+A collection of personal R Data Science scripts.
 
 **ODSC Meetup Map**
 
-Links: [[App]](https://gfleetwood.shinyapps.io/odsc_meetup_map/)[[Code]](https://github.com/OpenDataScienceConference/meetup-map)
+[[App]](https://gfleetwood.shinyapps.io/odsc_meetup_map/)[[Code]](https://github.com/OpenDataScienceConference/meetup-map)
 
-Description: An interactive app made in R which shows the Open Data Science Conference's (ODSC) meetups around the world. Data is scraped from the Meetup.com using rvest, and displayed as a map via the leaflet library. The flexdashboard library provides the layout.
+An interactive app made in R which shows the Open Data Science Conference's (ODSC) meetups around the world. Data is scraped from the Meetup.com using rvest, and displayed as a map via the leaflet library. The flexdashboard library provides the layout.
