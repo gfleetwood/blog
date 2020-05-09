@@ -64,11 +64,6 @@ socialmarkup = true
     weight = 200
     url = "/projects/"
 [[menu.main]]
-    name = "knowledge-base"
-    identifier = "knowledge-base"
-    weight = 300
-    url = "/knowledge-base/"
-[[menu.main]]
     name = "about"
     identifier = "about"
     weight = 300

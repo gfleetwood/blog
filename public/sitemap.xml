@@ -68,27 +68,17 @@
   </url>
   
   <url>
-    <loc>/categories/about/</loc>
-    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/about/</loc>
     <lastmod>2019-02-28T22:55:05-04:00</lastmod>
   </url>
   
   <url>
+    <loc>/categories/about/</loc>
+    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/articles/</loc>
-    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/knowledge-base/</loc>
-    <lastmod>2019-02-28T22:55:05-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/knowledge-base/</loc>
     <lastmod>2019-02-28T22:55:05-04:00</lastmod>
   </url>
   
