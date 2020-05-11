@@ -26,7 +26,7 @@ author = "technologiad"
 intro = ""
 description = '"We write to taste life twice, in the moment and in retrospect."'
 authorimage = "sunyata.png"
-dateformat = "Jan 2, 2006"
+dateformat = "2020-01-02"
 
 ## Site Meta Settings
 [params.meta]
@@ -37,20 +37,20 @@ keywords = "minimalist,blog,goa,hugo,developer"
 [params.social]
 github = "gfleetwood"
 linkedin = "gfleetwood"
-#twitter = "<username>"
+email = "gfleetwood@protonmail.com"
 #stackoverflow = "<username>"
+#twitter = "<username>"
 #hackernews = "<username>"
 #kickstarter = "<username>"
 #patreon = "<username>"
 #youtube = "<username>"
-email = "gfleetwood@protonmail.com"
 
 ## Extras
-[params.extra]
-copyright = "© 2019"
-poweredby = true
-highlightjs = true
-socialmarkup = true
+#[params.extra]
+#copyright = "© 2019"
+#poweredby = true
+#highlightjs = true
+#socialmarkup = true
 
 ## Main Menu
 [[menu.main]]
@@ -63,8 +63,8 @@ socialmarkup = true
     identifier = "projects"
     weight = 200
     url = "/projects/"
-[[menu.main]]
-    name = "resume"
-    identifier = "resume"
-    weight = 300
-    url = "https://www.dropbox.com/s/2emu76luasf8nft/resume_gfleetwood.pdf?dl=0"
+#[[menu.main]]
+#    name = "resume"
+#    identifier = "resume"
+#    weight = 300
+#    url = "https://www.dropbox.com/s/2emu76luasf8nft/resume_gfleetwood.pdf?dl=0"
