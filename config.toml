@@ -26,7 +26,7 @@ author = "technologiad"
 intro = ""
 description = '"We write to taste life twice, in the moment and in retrospect."'
 authorimage = "sunyata.png"
-dateformat = "2020-01-02"
+dateformat = "Jan 2, 2006"
 
 ## Site Meta Settings
 [params.meta]
