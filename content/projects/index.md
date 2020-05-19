@@ -10,16 +10,6 @@ title = "Projects"
 showpagemeta = true
 +++
 
-## General
-
-[Notebook](https://gfleetwood.github.io/notebook/)
-
-[Class Notes](https://gfleetwood.github.io/classes/)
-
-[Open Source Resources](https://teul-io.github.io/open-x/)
-
-<br/>
-
 ## Science
 
 Hold
