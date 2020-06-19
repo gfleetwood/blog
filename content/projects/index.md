@@ -10,25 +10,15 @@ title = "Projects"
 showpagemeta = true
 +++
 
-## Science
+***Resume**
 
-Hold
-
-<br/>
-
-## Technology
+You can find my resume [here](https://www.dropbox.com/s/2emu76luasf8nft/resume_gfleetwood.pdf?dl=0).
 
 **asteres**
 
 [[Repo]](https://github.com/gfleetwood/asteres-template)
 
 An extension to include tag management for starred GitHub repositories by representing them as repo issues. Syncing is done with a Github Action working and a Heroku Flask endpoint.
-
-**cantor**
-
-[[Site]](https://cantor.bubbleapps.io/)
-
-A website to follow GitHub organizations. Users are notified whenever new repositories are created. The front end uses a no code platform called Bubble to take care of user and database management. The back end uses Python for processing data, updating data, and sending emails.
 
 **handyman**
 
@@ -41,18 +31,6 @@ A collection of personal Python Data Science scripts.
 [[Repo]](https://github.com/gfleetwood/sansor)
 
 A collection of personal R Data Science scripts.
-
-<br/>
-
-## Engineering
-
-Hold
-
-<br/>
-
-## Math
-
-Hold
 
 <br/>
 
