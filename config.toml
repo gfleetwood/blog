@@ -24,7 +24,7 @@ enableRobotsTXT = true
 [params]
 author = "technologiad"
 intro = ""
-description = '"We write to taste life twice, in the moment and in retrospect."'
+description = '"Wir müssen wissen. Wir werden wissen."'
 authorimage = "sunyata.png"
 dateformat = "Jan 2, 2006"
 
@@ -63,6 +63,11 @@ email = "gfleetwood@protonmail.com"
     identifier = "projects"
     weight = 200
     url = "/projects/"
+[[menu.main]]
+    name = "rss"
+    identifier = "rss"
+    weight = 200
+    url = "https://gfleetwood.netlify.app/index.xml"
 #[[menu.main]]
 #    name = "resume"
 #    identifier = "resume"

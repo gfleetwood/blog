@@ -6,10 +6,20 @@
     <description>Recent content in other on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 24 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/other/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Your Keyboard As A Mouse</title>
+      <link>/blog/keyboard-as-mouse/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/keyboard-as-mouse/</guid>
+      <description>Announcement I’m moving towards writing reference articles for problems I’ve solved instead of saving links. This is the first of these.
+ Summary Setting up a Raspberry Pi can be frustrating if you’re not prepared. On the manual route of flashing an SD card and navigating the alpha soup of cable connectors (USB Mini, USB C, HDMI to Mini HDMI), the other potential sticking points are the input and output devices.</description>
+    </item>
     
     <item>
       <title>Automatic Audio Books</title>

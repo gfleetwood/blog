@@ -1,0 +1,63 @@
+---
+title: "Your Keyboard As A Mouse"
+date: '`r format(Sys.Date(), "%Y-%m-%d")`'
+categories: ["other"]
+---
+
+```{r setup, include=FALSE, eval = F}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+## Announcement
+
+I'm moving towards writing reference articles for problems I've solved instead of saving links. This is the first of these.
+
+## Summary
+
+Setting up a Raspberry Pi can be frustrating if you're not prepared. On the manual route of flashing an SD card and navigating the alpha soup of cable connectors (USB Mini, USB C, HDMI to Mini HDMI), the other potential sticking points are the input and output devices. So it was that one day I dodged all the potential bullets before being painfully shot with a missing mouse. "If only I could use a keyboard as a mouse," put me down the road that led to this article.
+
+First I tried synthesizing this keyboard enhancement drug in Python with pyinput and pyautogui. That worked in testing but I couldn't get it to work with systemd as a permanent application. Someone helpfully pointed out that there were some lower level shenanigans going on, but I wasn't sure how to proceed so I abandoned this work for a while.
+
+I forget the catalyst for its revival, but somehow I came across the exact architecture I needed to use: [1](http://xahlee.info/linux/linux_xbindkeys_tutorial.html) [2](https://anton.logvinenko.site/en/blog/emulation-of-mouse-movements-and-keystrokes.html). xbindkeys and xte became the keys to my success. 
+
+The End.
+
+## xbindkeys Reference
+
+```
+xbindkeys --key # find name of key
+killall -s1 xbindkeys # make xbindkeys reload config
+xbindkeys # start xbindkeys daemon
+xbindkeys -f ~/.xbindkeysrc
+```
+
+## .xbindkeysrc Config File
+
+```
+# Keyboard as Mouse
+
+# move mouse up (with alt+w)
+"xte 'mousermove 0 -10'"
+   alt+w
+
+# move mouse down
+"xte 'mousermove 0 10'"
+   alt+s
+
+# move mouse left
+"xte 'mousermove -10 0'"
+   alt+a
+
+# move mouse right
+"xte 'mousermove 10 0'"
+   alt+d
+
+# left click
+"sleep 1 && xte 'mouseclick 1'"
+   alt+q
+
+# right click
+"sleep 1 && xte 'mouseclick 3'"
+   alt+e
+
+```
