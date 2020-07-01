@@ -84,14 +84,17 @@ My luck changed when Safe Graph released free neighborhood census data from 2016
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
       <guid>/projects/</guid>
-      <description>Science Hold
-
-Technology asteres
+      <description>Resume
+You can find my resume here.
+asteres
 [Repo]
 An extension to include tag management for starred GitHub repositories by representing them as repo issues. Syncing is done with a Github Action working and a Heroku Flask endpoint.
-cantor
-[Site]
-A website to follow GitHub organizations. Users are notified whenever new repositories are created. The front end uses a no code platform called Bubble to take care of user and database management. The back end uses Python for processing data, updating data, and sending emails.</description>
+handyman
+[Repo]
+A collection of personal Python Data Science scripts.
+sansor
+[Repo]
+A collection of personal R Data Science scripts.</description>
     </item>
     
     <item>

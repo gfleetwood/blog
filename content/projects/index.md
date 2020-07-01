@@ -12,7 +12,7 @@ showpagemeta = true
 
 **Resume**
 
-You can find my resume [here](https://www.dropbox.com/s/2emu76luasf8nft/resume_gfleetwood.pdf?dl=0).
+You can find my resume [here](https://www.dropbox.com/s/cuille7m3v4v1qt/resume_gfleetwood.pdf?dl=0).
 
 **asteres**
 
