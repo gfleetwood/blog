@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="description" content="Simple minimalist theme">
+<meta name="keywords" content="minimalist,blog,goa,hugo,developer">
+
+<base href="/">
+
+<title>technologiad</title>
+
+<meta name="generator" content="Hugo 0.58.3" />
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400|Roboto+Slab:400,700|Roboto:300,300i,400,400i,500,500i,700,700i">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body lang="en-US">
+<div class="container">
+
+
+<header class="row text-left title">
+  <h1 class="title">STEM Musings #1: How Good Is CRUD As An Abstraction?</h1>
+</header>
+<section id="category-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-left meta">
+        PUBLISHED ON OCT 28, 2020 
+      
+    </h6>
+  </div>
+  
+</section>
+<section id="content-pane" class="row">
+  <div class="col-md-12 text-justify content">
+    
+
+
+<p><strong>I do a lot of thinking about STEM - especially technology and engineering. It’s the building part where I trip up - hence the sparsity of blog posts. This series seeks to change through my putting my thoughts down without the need to have a tangible accompaniment.</strong></p>
+<p>Despite the global overview above my first topic is something that has a tangible component - as tangible as software can get.</p>
+<p>Writing code is often the easy part of the enterprise of building a package. Good documentation is the real challenge. This is especially true for user experience where confusing and incomplete documentation is the norm. This process is multifaceted but I want to concentrate on the hardest part: naming.</p>
+<blockquote>
+<p>There are only two hard things in Computer Science: cache invalidation and naming things.</p>
+</blockquote>
+<p>A function with a good name excavates a lot of dirt in the Pit of Success. Groups of similar functions (for some definition of similarity) are even better. R’s dplyr is a good example:</p>
+<pre><code># The format is package_name::function
+dplyr::db_analyze
+dplyr::db_begin
+dplyr::db_commit</code></pre>
+<p>There’s no ambiguity as to what these functions relate to. What I’m thinking of though is a higher level of abstraction, one that leverages an already existing paradigm: CRUD.</p>
+<p>Create, Read, Update, Delete. These four operations define interactions with a database. I assert that they can be generalized to any set of interactions. Let’s convert a competing paradigm for HTTP requests (disclosure: I got this from a site and can’t remember find the url):</p>
+<ul>
+<li>POST: Create</li>
+<li>GET: Read</li>
+<li>PUT: Update/Replace</li>
+<li>PATCH: Update/Modify</li>
+<li>DELETE: Delete</li>
+</ul>
+<p>I’m missing POST but you get the idea. This standardization bring a set expectations for developers and users that would make life so much easier.</p>
+<p>Now for a more personal and involved example. I always have to google bash commands for simple things. Partly this is down to a lack of use, but it’s always due to the lack of structure across commands. For example, I upgraded Ubuntu from 18.04 to 20.04 recently. What’s the command for checking the current OS version?</p>
+<pre><code>lsb_release -FLAG</code></pre>
+<p>I’m sure that means something, but it’s not intuitive. I added this to my .bashrc instead:</p>
+<pre><code>alias read_os_version=&quot;lsb_release -a&quot;</code></pre>
+<p>Much better. Just <code>os_version</code> would suffice but the key here is to group reading operations together in one place. It’s also against the grain of aliases culture which leans towards short references to long commands.</p>
+<p>If I want to pull up all my aliases I have:</p>
+<pre><code>alias read_aliases=&quot;cat .bashrc | grep &#39;alias&#39;&quot;</code></pre>
+<p>With descriptive aliases it’s easy to grep what I’m looking for. Maybe this is not a feasible syntactic sugar for bash in its entirety, but it could be the basis for a bash replacement. Add tab completion to get a list of all commands…I won’t get into the needed redesign of the command line.</p>
+<p>In a nutshell: Prepend the relevant operation to function names. It’s intuitive, descriptive, and reinforces the good pattern of keeping functions as pure as possible.</p>
+<p>There are potential places for conflict. Read and Delete are (mostly) siloed, but it’s easy to imagine uncertainty when deciding whether something is being created or updated.</p>
+<p>No system is perfect, but I think this one would go a long way.</p>
+
+  </div>
+</section>
+<section id="tag-pane" class="row meta">
+  
+  <div class="col-md-12">
+    <h6 class="text-right meta">
+      
+    </h6>
+  </div>
+  
+</section>
+
+
+
+
+
+
+
+
+<section id="menu-pane" class="row menu text-center">
+  
+  
+  <span><a class="menu-item" href="/blog/keyboard-as-mouse/">&lt; prev | </a></span>
+  
+  
+  <span><a class="menu-item" href="/blog">blog</a></span>
+  
+  
+  
+  <h4 class="text-center"><a class="menu-item" href="/">home</a></h4>
+</section>
+
+
+
+<footer class="row text-center footer">
+  <hr />
+  
+</footer>
+
+</div>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'XYZ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+

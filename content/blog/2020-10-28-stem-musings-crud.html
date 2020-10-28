@@ -1,0 +1,40 @@
+---
+title: 'STEM Musings #1: How Good Is CRUD As An Abstraction?'
+date: '2020-10-28'
+output: html_document
+---
+
+
+
+<p><strong>I do a lot of thinking about STEM - especially technology and engineering. It’s the building part where I trip up - hence the sparsity of blog posts. This series seeks to change through my putting my thoughts down without the need to have a tangible accompaniment.</strong></p>
+<p>Despite the global overview above my first topic is something that has a tangible component - as tangible as software can get.</p>
+<p>Writing code is often the easy part of the enterprise of building a package. Good documentation is the real challenge. This is especially true for user experience where confusing and incomplete documentation is the norm. This process is multifaceted but I want to concentrate on the hardest part: naming.</p>
+<blockquote>
+<p>There are only two hard things in Computer Science: cache invalidation and naming things.</p>
+</blockquote>
+<p>A function with a good name excavates a lot of dirt in the Pit of Success. Groups of similar functions (for some definition of similarity) are even better. R’s dplyr is a good example:</p>
+<pre><code># The format is package_name::function
+dplyr::db_analyze
+dplyr::db_begin
+dplyr::db_commit</code></pre>
+<p>There’s no ambiguity as to what these functions relate to. What I’m thinking of though is a higher level of abstraction, one that leverages an already existing paradigm: CRUD.</p>
+<p>Create, Read, Update, Delete. These four operations define interactions with a database. I assert that they can be generalized to any set of interactions. Let’s convert a competing paradigm for HTTP requests (disclosure: I got this from a site and can’t remember find the url):</p>
+<ul>
+<li>POST: Create</li>
+<li>GET: Read</li>
+<li>PUT: Update/Replace</li>
+<li>PATCH: Update/Modify</li>
+<li>DELETE: Delete</li>
+</ul>
+<p>I’m missing POST but you get the idea. This standardization bring a set expectations for developers and users that would make life so much easier.</p>
+<p>Now for a more personal and involved example. I always have to google bash commands for simple things. Partly this is down to a lack of use, but it’s always due to the lack of structure across commands. For example, I upgraded Ubuntu from 18.04 to 20.04 recently. What’s the command for checking the current OS version?</p>
+<pre><code>lsb_release -FLAG</code></pre>
+<p>I’m sure that means something, but it’s not intuitive. I added this to my .bashrc instead:</p>
+<pre><code>alias read_os_version=&quot;lsb_release -a&quot;</code></pre>
+<p>Much better. Just <code>os_version</code> would suffice but the key here is to group reading operations together in one place. It’s also against the grain of aliases culture which leans towards short references to long commands.</p>
+<p>If I want to pull up all my aliases I have:</p>
+<pre><code>alias read_aliases=&quot;cat .bashrc | grep &#39;alias&#39;&quot;</code></pre>
+<p>With descriptive aliases it’s easy to grep what I’m looking for. Maybe this is not a feasible syntactic sugar for bash in its entirety, but it could be the basis for a bash replacement. Add tab completion to get a list of all commands…I won’t get into the needed redesign of the command line.</p>
+<p>In a nutshell: Prepend the relevant operation to function names. It’s intuitive, descriptive, and reinforces the good pattern of keeping functions as pure as possible.</p>
+<p>There are potential places for conflict. Read and Delete are (mostly) siloed, but it’s easy to imagine uncertainty when deciding whether something is being created or updated.</p>
+<p>No system is perfect, but I think this one would go a long way.</p>

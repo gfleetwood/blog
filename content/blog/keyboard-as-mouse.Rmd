@@ -1,7 +1,6 @@
 ---
 title: "Your Keyboard As A Mouse"
-date: '`r format(Sys.Date(), "%Y-%m-%d")`'
-categories: ["other"]
+date: 2020-09-01
 ---
 
 ```{r setup, include=FALSE, eval = F}

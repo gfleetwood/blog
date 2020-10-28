@@ -2,7 +2,6 @@
 title: "Google Drive As A Blogdown CMS"
 date: 2019-11-12
 categories: ["other"]
-description: "Christening my new blog"
 ---
 
 ```{r setup, include=FALSE}

@@ -6,20 +6,10 @@
     <description>Recent content in other on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 19 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/other/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Your Keyboard As A Mouse</title>
-      <link>/blog/keyboard-as-mouse/</link>
-      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/keyboard-as-mouse/</guid>
-      <description>Announcement I’m moving towards writing reference articles for problems I’ve solved instead of saving links. This is the first of these.
- Summary Setting up a Raspberry Pi can be frustrating if you’re not prepared. On the manual route of flashing an SD card and navigating the alpha soup of cable connectors (USB Mini, USB C, HDMI to Mini HDMI), the other potential sticking points are the input and output devices.</description>
-    </item>
     
     <item>
       <title>Automatic Audio Books</title>
@@ -38,15 +28,6 @@ The book I choose was Carroll Quigley’s “The Evolution Of Civilizations”. 
       
       <guid>/blog/gdocs-cms-blogdown/</guid>
       <description>The true catalyst for this work is lost to the annals of time (known as September 2019), but bits and pieces surface from time to time. They include musings on the Jamstack, GitHub as a personal data store, concatenating different services, and, perhaps most importantly, how to combine these with a multi-user blogging site based on blogdown. Actually, I’m missing another important cause in the wish to have a traditional Content Management System to acccomodate those who aren’t familiar with markdown.</description>
-    </item>
-    
-    <item>
-      <title>Microtransactions In Journalism</title>
-      <link>/blog/micropayments-journalism/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/micropayments-journalism/</guid>
-      <description>The changing face of journalism has been written about extensively, which is unsurprising given the field’s major occupation. Advertistng driven revenue reached a peak of close to $50 billion dollars in about 2010 before being suffocated by the Google and Facebook juggernauts. Cue the shuttering of newsrooms and clearing of desks as the industry struggled to regain its footing in the digital age. Even new media companies who thought they had the nimbleness to avoid the fate of the old guard have stumbled.</description>
     </item>
     
     <item>
