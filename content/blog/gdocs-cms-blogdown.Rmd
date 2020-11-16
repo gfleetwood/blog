@@ -28,8 +28,6 @@ I recommend this [post](https://alison.rbind.io/post/2017-06-12-up-and-running-w
 
 <img src="/../../static/img/gdoc-cms.png" alt="" />
 
-![](gdoc-cms.png)
-
 Parsing required most of the work. I struggled with how to explain this, but ended up going with presented the code in its entirety with explanatory comments. Outside of the R libraries listed below you need to [install pandoc](https://pandoc.org/installing.html) for the conversion between docx and markdown.
 
 ```{r}

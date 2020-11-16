@@ -27,7 +27,10 @@ handyman
 A collection of personal Python Data Science scripts.
 sansor
 [Repo]
-A collection of personal R Data Science scripts.</description>
+A collection of personal R Data Science scripts.
+audiobook maker
+[Repo]
+A pipeline to convert pdfs (via OCR), plain text, or web articles to mp3s using Google&amp;rsquo;s Text to Speech API.</description>
     </item>
     
   </channel>

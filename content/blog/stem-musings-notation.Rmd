@@ -1,0 +1,29 @@
+---
+title: 'STEM Musings #2: Towards New Coding Notation'
+date: '2020-11-15'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is going to really be a musing given how short it is. 
+
+One of the most ubiquitous shibboleths in software is the use of the terms foo, baz (, and foobaz) as placeholders. They are not difficult to parse once you understand their purpose, but as notation goes its pretty bad. I'd prefer a formalization that echoes the terseness of Mathematical notation, while remaining intuitive. So far I've come up with these:
+
+* lib:: : Short for library or package. The double colon borrows from R's library notation.
+
+* func(...): Short for function and the ellipses represent one of an arbritrary number of parameters. 
+
+* --Param: Short for parameter and borrows the bash notation for a function parameter. The capitalization is important and borrows from Math's distinct between a probability distribution, X, and a particular value of the distribution, x. 
+
+* --arg: Short for argument. As for --Param the lack of capitalization is important via mirror of the notation used in probability distributions. 
+
+To put it all together: We can then talk about the library string:: which has the function concat(...) with parameters --First_string and --Second_string. In a particular use of concat(...) we want to pass in --"hello" and --"world" respectively.
+
+Now to find a better way to explain "free as in beer" versus "free as in speech". I'm leaning towards usage of genotype and phenotype. Genofree software is one you get for free and can modify and do with as you please since the innards (genes) are available to you. Phenofree software you only get for free since you can only see its outward expression. Not the most easy to wield terms. Back to the drawing board.
+
+
+
+

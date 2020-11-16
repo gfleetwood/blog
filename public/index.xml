@@ -6,7 +6,7 @@
     <description>Recent content on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 28 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,18 +14,37 @@
     <item>
       <title>Resume</title>
       <link>/resume/resume/</link>
-      <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/resume/resume/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>STEM Musings #2: Towards New Coding Notation</title>
+      <link>/blog/stem-musings-notation/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/stem-musings-notation/</guid>
+      <description>This is going to really be a musing given how short it is.
+One of the most ubiquitous shibboleths in software is the use of the terms foo, baz (, and foobaz) as placeholders. They are not difficult to parse once you understand their purpose, but as notation goes its pretty bad. I’d prefer a formalization that echoes the terseness of Mathematical notation, while remaining intuitive. So far I’ve come up with these:</description>
+    </item>
+    
+    <item>
+      <title>Bridging The Data Divide</title>
+      <link>/blog/data-divide/</link>
+      <pubDate>Sun, 01 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/data-divide/</guid>
+      <description>There’s a constant bifurcation between the technical and non-technical interaction with data, especially with databases. While developers work directly with the database via SQL, others are more comfortable using GUI based methods like spreadsheets. By default this excludes the notion of a global single source of truth. Since a database is the obvious candidate for this source of truth, the goal is to bring non-developers into the sphere of interacting with the database without having to learn SQL.</description>
+    </item>
+    
+    <item>
       <title>STEM Musings #1: How Good Is CRUD As An Abstraction?</title>
-      <link>/blog/2020-10-28-stem-musings-crud/</link>
+      <link>/blog/stem-musings-crud/</link>
       <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2020-10-28-stem-musings-crud/</guid>
+      <guid>/blog/stem-musings-crud/</guid>
       <description>I do a lot of thinking about STEM - especially technology and engineering. It’s the building part where I trip up - hence the sparsity of blog posts. This series seeks to change through my putting my thoughts down without the need to have a tangible accompaniment.
 Despite the global overview above my first topic is something that has a tangible component - as tangible as software can get.</description>
     </item>
@@ -104,7 +123,10 @@ handyman
 A collection of personal Python Data Science scripts.
 sansor
 [Repo]
-A collection of personal R Data Science scripts.</description>
+A collection of personal R Data Science scripts.
+audiobook maker
+[Repo]
+A pipeline to convert pdfs (via OCR), plain text, or web articles to mp3s using Google&amp;rsquo;s Text to Speech API.</description>
     </item>
     
     <item>

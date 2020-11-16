@@ -1,0 +1,12 @@
+---
+title: 'Bridging The Data Divide'
+date: '2020-11-01'
+output: html_document
+---
+
+
+
+<p>There’s a constant bifurcation between the technical and non-technical interaction with data, especially with databases. While developers work directly with the database via SQL, others are more comfortable using GUI based methods like spreadsheets. By default this excludes the notion of a global single source of truth. Since a database is the obvious candidate for this source of truth, the goal is to bring non-developers into the sphere of interacting with the database without having to learn SQL.</p>
+<p>There are a number of products that (try to) solve this problem. Free solutions are an order of magnitude lower than paid ones, and I didn’t gravitate to any of them. I built <a href="https://github.com/gfleetwood/database_crud_prototype/tree/master">Database RU</a> as my attempt at another. “RU” is from “CRUD” as the user can only read and update tables.</p>
+<p><img src="/blog/data-divide_files/db_ru.png" style="width:80.0%" /></p>
+<p>Of course this is far from enough. Off the top of my head one would need to limit interaction with the app to one person at a time, or implement a system to resolve operational transformations. Put another way, it’s both a technical and people problem, and a signicant part of the solution is implementing a process for dealing with data.</p>
