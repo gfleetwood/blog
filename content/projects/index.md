@@ -10,16 +10,6 @@ title = "Projects"
 showpagemeta = true
 +++
 
-**Resume**
-
-You can find my resume [here](https://www.dropbox.com/s/cuille7m3v4v1qt/resume_gfleetwood.pdf?dl=0).
-
-**asteres**
-
-[[Repo]](https://github.com/gfleetwood/asteres-template)
-
-An extension to include tag management for starred GitHub repositories by representing them as repo issues. Syncing is done with a Github Action working and a Heroku Flask endpoint.
-
 **handyman**
 
 [[Repo]](https://github.com/gfleetwood/handyman)

@@ -2,27 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>articles on technologiad</title>
-    <link>/categories/articles/</link>
+    <link>https://gfleetwood.netlify.com/categories/articles/</link>
     <description>Recent content in articles on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Thu, 28 Feb 2019 22:55:05 -0400</lastBuildDate>
     
-	<atom:link href="/categories/articles/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gfleetwood.netlify.com/categories/articles/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Projects</title>
-      <link>/projects/</link>
+      <link>https://gfleetwood.netlify.com/projects/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
-      <guid>/projects/</guid>
-      <description>Resume
-You can find my resume here.
-asteres
-[Repo]
-An extension to include tag management for starred GitHub repositories by representing them as repo issues. Syncing is done with a Github Action working and a Heroku Flask endpoint.
-handyman
+      <guid>https://gfleetwood.netlify.com/projects/</guid>
+      <description>handyman
 [Repo]
 A collection of personal Python Data Science scripts.
 sansor
@@ -30,7 +25,10 @@ sansor
 A collection of personal R Data Science scripts.
 audiobook maker
 [Repo]
-A pipeline to convert pdfs (via OCR), plain text, or web articles to mp3s using Google&amp;rsquo;s Text to Speech API.</description>
+A pipeline to convert pdfs (via OCR), plain text, or web articles to mp3s using Google&amp;rsquo;s Text to Speech API.
+db ru
+[Repo]
+A prototype of a database frontend to allow non-technical users to Read and Update a database. It also included a log of the change to each cell to faciltate consistent reversion.</description>
     </item>
     
   </channel>

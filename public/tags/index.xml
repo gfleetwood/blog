@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on technologiad</title>
-    <link>/tags/</link>
+    <link>https://gfleetwood.netlify.com/tags/</link>
     <description>Recent content in Tags on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Thu, 28 Feb 2019 22:55:05 -0400</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gfleetwood.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>projects</title>
-      <link>/tags/projects/</link>
+      <link>https://gfleetwood.netlify.com/tags/projects/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
-      <guid>/tags/projects/</guid>
+      <guid>https://gfleetwood.netlify.com/tags/projects/</guid>
       <description></description>
     </item>
     

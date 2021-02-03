@@ -1,0 +1,15 @@
+---
+title: 'GitHub SMS Notifications'
+date: '2021-02-03'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Usually I consume GitHub notifications at my leisure, but a month ago I had to shake a leg for a collaboration. I wasn't shaking it fast enough since my main method for finding out notifications is via my email. 
+
+I needed real time notifications without having to develop a new habit. Since GitHub doesn't provide that option I had to roll my own. It turned out to be pretty simple with a single script connecting GitHub and Twilio with scheduled based profiling provided by deploying on Heroku. Every two hours it checks GitHub for unread notifications, and sends me a text with the name of the repository. It was so easy I only decided to do a write up now, about two months later.
+
+Here's a link to the [code](https://github.com/gfleetwood/github-sms-notifications). The README has the replication details.

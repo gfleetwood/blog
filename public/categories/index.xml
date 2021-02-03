@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on technologiad</title>
-    <link>/categories/</link>
+    <link>https://gfleetwood.netlify.com/categories/</link>
     <description>Recent content in Categories on technologiad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 24 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gfleetwood.netlify.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>other</title>
-      <link>/categories/other/</link>
+      <link>https://gfleetwood.netlify.com/categories/other/</link>
       <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/other/</guid>
+      <guid>https://gfleetwood.netlify.com/categories/other/</guid>
       <description></description>
     </item>
     
     <item>
       <title>articles</title>
-      <link>/categories/articles/</link>
+      <link>https://gfleetwood.netlify.com/categories/articles/</link>
       <pubDate>Thu, 28 Feb 2019 22:55:05 -0400</pubDate>
       
-      <guid>/categories/articles/</guid>
+      <guid>https://gfleetwood.netlify.com/categories/articles/</guid>
       <description></description>
     </item>
     
