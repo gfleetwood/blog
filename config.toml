@@ -38,8 +38,6 @@ keywords = "minimalist,blog,goa,hugo,developer"
 github = "gfleetwood"
 linkedin = "gfleetwood"
 email = "gfleetwood@protonmail.com"
-#stackoverflow = "<username>"
-#twitter = "<username>"
 #hackernews = "<username>"
 #kickstarter = "<username>"
 #patreon = "<username>"
@@ -63,11 +61,11 @@ email = "gfleetwood@protonmail.com"
     identifier = "projects"
     weight = 200
     url = "/projects/"
-[[menu.main]]
-    name = "resume"
-    identifier = "resume"
-    weight = 200
-    url = "https://www.dropbox.com/s/cuille7m3v4v1qt/resume_gfleetwood.pdf?dl=0"
+#[[menu.main]]
+#    name = "resume"
+#    identifier = "resume"
+#    weight = 200
+#    url = "https://www.dropbox.com/s/cuille7m3v4v1qt/resume_gfleetwood.pdf?dl=0"
 [[menu.main]]
     name = "rss"
     identifier = "rss"
