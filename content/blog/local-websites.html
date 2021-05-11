@@ -16,7 +16,7 @@ output: html_document
 <p>Install buku And buku server: <code>pip3 install buku[server]</code>.</p>
 </div>
 <div id="step-2" class="section level2">
-<h2>Step 2:</h2>
+<h2>Step 2</h2>
 <p>Permanently run buku server with system d.</p>
 <p>Add this script as an executable to your bin folder. (Mine is called buku_server.) You’ll have to find out where buku server is installed with <code>which bukuserver</code>.</p>
 <pre><code># I&#39;m using port 5555 but choose whichever port you want
@@ -40,15 +40,27 @@ systemctl enable buku_server.service</code></pre>
 <p>Go to <code>127.0.0.1:5555</code> to check that buku server is running.</p>
 </div>
 <div id="step-3" class="section level2">
-<h2>Step 3:</h2>
+<h2>Step 3</h2>
 <p>This was the draw the rest of the owl part for me. I finally understood the process due to this blog:</p>
-<p><a href="https://www.interserver.net/tips/kb/local-domain-names-ubuntu/" class="uri">https://www.interserver.net/tips/kb/local-domain-names-ubuntu/</a></p>
+<p><code>https://www.interserver.net/tips/kb/local-domain-names-ubuntu/</code></p>
+<p>First you need to add a line to your <code>/etc/hosts</code> file: <code>127.0.0.1 buku.me</code>. Then add this to a configuration file in <code>/etc/apache2/sites-available</code> (mine is <code>000-default.conf</code>):</p>
+<pre><code># ServerName, ProxyPass, and ProxyPasReverse are the entries to change
+
+&lt;VirtualHost *:80&gt;
+  ServerAdmin test@test.com
+  ServerName buku.me
+  ProxyPass / http://127.0.0.1:5555/
+  ProxyPassReverse / http://127.0.0.1:5555/
+&lt;/VirtualHost&gt;</code></pre>
+<p>With that I was able to go to buku.me in my browser to access the buku server.</p>
 </div>
 <div id="bonus" class="section level2">
 <h2>Bonus</h2>
-<p>custom shortcut: /home/gordon/miniconda3/bin/python /home/gordon/buku_add.py</p>
-<p>buku_add.py</p>
-<p>import pyperclip
-import os</p>
-<p>os.system(“buku -a {}”.format(pyperclip.paste()))</p>
+<p>Even with this setup I still had to manually add urls to buku server. I wanted to have a shortcut, CTRL+B, that would automatically add a url. This solution actually adds whatever is on the clipboard to buku, so it’s on me to make sure it’s a url.</p>
+<p>In Ubuntu I mapped this custom shortcut to CTRL+B: <code>/home/gordon/miniconda3/bin/python /home/gordon/buku_add.py</code> where buku_add.py is:</p>
+<pre><code>import pyperclip
+import os
+
+os.system(&quot;buku -a {}&quot;.format(pyperclip.paste()))</code></pre>
+<p>buku_add.py is a vanilla Python script instead of an executable because that didn’t work. I have no idea why.</p>
 </div>

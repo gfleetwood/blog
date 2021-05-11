@@ -20,7 +20,7 @@ All these instructions pertain to Ubuntu 20.04.
 
 Install buku And buku server:  `pip3 install buku[server]`.
 
-## Step 2: 
+## Step 2
 
 Permanently run buku server with system d.
 
@@ -57,11 +57,11 @@ systemctl enable buku_server.service
 
 Go to `127.0.0.1:5555` to check that buku server is running.
 
-## Step 3:
+## Step 3
 
 This was the draw the rest of the owl part for me. I finally understood the process due to this blog:
 
-https://www.interserver.net/tips/kb/local-domain-names-ubuntu/
+`https://www.interserver.net/tips/kb/local-domain-names-ubuntu/`
 
 First you need to add a line to your `/etc/hosts` file: `127.0.0.1 buku.me`. Then add this to a configuration file in `/etc/apache2/sites-available` (mine is `000-default.conf`):
 
