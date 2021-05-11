@@ -1,0 +1,94 @@
+---
+title: 'Building Local DNS Websites'
+date: '2021-05-10'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is a reference blog on how to build a local DNS. 
+
+I use Google Chrome as my main browser, but I've been thinking of switching (or at least trying out) others. This possibility is hampered by Chrome lock-in powered by extensions and bookmarks, with the latter being the main issue. 
+
+The initial step involved a browser agnostic bookmark manager. I settled on buku which is cli based with an additional buku server to allow administration through a web interface. The next step was to permanently run buku server on a local port. Easy enough with systemd. Instead of bookmarking or typing 127.0.0.8000 (for example), I wanted to be able to type buku.me instead. That turned out to be much harder. 
+
+All these instructions pertain to Ubuntu 20.04.
+
+## Step 1
+
+Install buku And buku server:  `pip3 install buku[server]`.
+
+## Step 2: 
+
+Permanently run buku server with system d.
+
+Add this script as an executable to your bin folder. (Mine is called buku_server.) You'll have to find out where buku server is installed with `which bukuserver`.
+
+```
+# I'm using port 5555 but choose whichever port you want
+/home/gordon/miniconda3/bin/bukuserver run --host 127.0.0.1 --port 5555
+
+```
+
+Next add this service file, `buku_server.service`, to `/etc/systemd/system`.
+
+```
+[Unit]
+Description=Buku Server
+
+[Service]
+User=gordon
+WorkingDirectory=/home/gordon/.local/mybin
+ExecStart=/bin/bash /home/gordon/.local/mybin/buku_server
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Start and enable the service.
+
+```
+systemctl start buku_server.service
+systemctl enable buku_server.service
+```
+
+Go to `127.0.0.1:5555` to check that buku server is running.
+
+## Step 3:
+
+This was the draw the rest of the owl part for me. I finally understood the process due to this blog:
+
+https://www.interserver.net/tips/kb/local-domain-names-ubuntu/
+
+First you need to add a line to your `/etc/hosts` file: `127.0.0.1 buku.me`. Then add this to a configuration file in `/etc/apache2/sites-available` (mine is `000-default.conf`):
+
+```
+# ServerName, ProxyPass, and ProxyPasReverse are the entries to change
+
+<VirtualHost *:80>
+  ServerAdmin test@test.com
+  ServerName buku.me
+  ProxyPass / http://127.0.0.1:5555/
+  ProxyPassReverse / http://127.0.0.1:5555/
+</VirtualHost>
+```
+
+With that I was able to go to buku.me in my browser to access the buku server.
+
+## Bonus
+
+Even with this setup I still had to manually add urls to buku server. I wanted to have a shortcut, CTRL+B, that would automatically add a url. This solution actually adds whatever is on the clipboard to buku, so it's on me to make sure it's a url.
+
+In Ubuntu I mapped this custom shortcut to CTRL+B: `/home/gordon/miniconda3/bin/python /home/gordon/buku_add.py` where buku_add.py is:
+
+```
+import pyperclip
+import os
+
+os.system("buku -a {}".format(pyperclip.paste()))
+```
+
+buku_add.py is a vanilla Python script instead of an executable because that didn't work. I have no idea why.

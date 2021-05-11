@@ -36,8 +36,8 @@ keywords = "minimalist,blog,goa,hugo,developer"
 ## Social Accounts
 [params.social]
 github = "gfleetwood"
-linkedin = "gfleetwood"
-email = "gfleetwood@protonmail.com"
+#linkedin = "gfleetwood"
+#email = "gfleetwood@protonmail.com"
 #hackernews = "<username>"
 #kickstarter = "<username>"
 #patreon = "<username>"
@@ -45,7 +45,7 @@ email = "gfleetwood@protonmail.com"
 
 ## Extras
 #[params.extra]
-#copyright = "© 2019"
+#copyright = "©2019"
 #poweredby = true
 #highlightjs = true
 #socialmarkup = true
@@ -57,12 +57,12 @@ email = "gfleetwood@protonmail.com"
     identifier = "blog"
     url = "/blog/"
 [[menu.main]]
-    name = "projects"
-    identifier = "projects"
-    weight = 200
-    url = "/projects/"
-[[menu.main]]
     name = "rss"
     identifier = "rss"
-    weight = 300
+    weight = 200
     url = "https://gfleetwood.netlify.app/index.xml"
+[[menu.main]]
+    name = "projects"
+    identifier = "projects"
+    weight = 300
+    url = "/projects/"

@@ -1,0 +1,54 @@
+---
+title: 'Building Local DNS Websites'
+date: '2021-05-10'
+output: html_document
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>This is a reference blog on how to build a local DNS.</p>
+<p>I use Google Chrome as my main browser, but I’ve been thinking of switching (or at least trying out) others. This possibility is hampered by Chrome lock-in powered by extensions and bookmarks, with the latter being the main issue.</p>
+<p>The initial step involved a browser agnostic bookmark manager. I settled on buku which is cli based with an additional buku server to allow administration through a web interface. The next step was to permanently run buku server on a local port. Easy enough with systemd. Instead of bookmarking or typing 127.0.0.8000 (for example), I wanted to be able to type buku.me instead. That turned out to be much harder.</p>
+<p>All these instructions pertain to Ubuntu 20.04.</p>
+<div id="step-1" class="section level2">
+<h2>Step 1</h2>
+<p>Install buku And buku server: <code>pip3 install buku[server]</code>.</p>
+</div>
+<div id="step-2" class="section level2">
+<h2>Step 2:</h2>
+<p>Permanently run buku server with system d.</p>
+<p>Add this script as an executable to your bin folder. (Mine is called buku_server.) You’ll have to find out where buku server is installed with <code>which bukuserver</code>.</p>
+<pre><code># I&#39;m using port 5555 but choose whichever port you want
+/home/gordon/miniconda3/bin/bukuserver run --host 127.0.0.1 --port 5555
+</code></pre>
+<p>Next add this service file, <code>buku_server.service</code>, to <code>/etc/systemd/system</code>.</p>
+<pre><code>[Unit]
+Description=Buku Server
+
+[Service]
+User=gordon
+WorkingDirectory=/home/gordon/.local/mybin
+ExecStart=/bin/bash /home/gordon/.local/mybin/buku_server
+Restart=always
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+<p>Start and enable the service.</p>
+<pre><code>systemctl start buku_server.service
+systemctl enable buku_server.service</code></pre>
+<p>Go to <code>127.0.0.1:5555</code> to check that buku server is running.</p>
+</div>
+<div id="step-3" class="section level2">
+<h2>Step 3:</h2>
+<p>This was the draw the rest of the owl part for me. I finally understood the process due to this blog:</p>
+<p><a href="https://www.interserver.net/tips/kb/local-domain-names-ubuntu/" class="uri">https://www.interserver.net/tips/kb/local-domain-names-ubuntu/</a></p>
+</div>
+<div id="bonus" class="section level2">
+<h2>Bonus</h2>
+<p>custom shortcut: /home/gordon/miniconda3/bin/python /home/gordon/buku_add.py</p>
+<p>buku_add.py</p>
+<p>import pyperclip
+import os</p>
+<p>os.system(“buku -a {}”.format(pyperclip.paste()))</p>
+</div>
